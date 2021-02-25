@@ -23,6 +23,8 @@ function App() {
             AFFORDABLErrrrrrrr
           </a>
           <h1>Rafay</h1>
+          <h1>Daniel</h1>
+          <h1>Joe</h1>
           <span>, </span>
           <a
             className='App-link'
