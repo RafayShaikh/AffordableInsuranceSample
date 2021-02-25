@@ -21,8 +21,8 @@ function App() {
             rel='noopener noreferrer'
           >
 
-            AFFORDABLE RRRR
-
+            AFFORDABLEdddddd
+    
           </a>
           <span>, </span>
           <a
