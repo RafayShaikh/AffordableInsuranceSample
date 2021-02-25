@@ -20,10 +20,9 @@ function App() {
             target='_blank'
             rel='noopener noreferrer'
           >
-
-            AFFORDABLEdddddd
-    
+            AFFORDABLErrrrrrrr
           </a>
+          <h1>Rafay</h1>
           <span>, </span>
           <a
             className='App-link'
