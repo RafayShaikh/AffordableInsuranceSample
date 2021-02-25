@@ -20,7 +20,9 @@ function App() {
             target='_blank'
             rel='noopener noreferrer'
           >
-            AFFORDABLEssss
+
+            AFFORDABLE RRRR
+
           </a>
           <span>, </span>
           <a
