@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header';
 
 function App() {
-  const [header, setHeader] = useState('Header');
+  const [header, setHeader] = useState('header');
 
   const listenScrollEvent = (event) => {
     if (window.scrollY < 73) {
