@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { app } from './features/appSlice';
 import './App.css';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   const [header, setHeader] = useState('header');
@@ -33,6 +34,7 @@ function App() {
         <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
         <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
         <h1>Place Holder</h1>
+        <Footer />
       </div>
     </div>
   );
