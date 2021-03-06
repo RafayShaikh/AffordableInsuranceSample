@@ -61,7 +61,7 @@
 }
 .header_container2 {
   position: fixed;
-  height: 10vh;
+  height: 8vh;
   width: 100%;
   z-index: 20;
   display: flex;
