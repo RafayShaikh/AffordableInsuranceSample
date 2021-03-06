@@ -1,8 +1,11 @@
 * {
-  transition: 1s;
+  transition: 0.7s;
 }
 .App {
   height: 100;
   width: 100%;
-  background-color: rgb(241, 201, 148);
+}
+
+.Body {
+  padding-top: 25vh;
 }

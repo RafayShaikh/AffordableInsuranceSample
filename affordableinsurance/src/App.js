@@ -23,15 +23,17 @@ function App() {
   return (
     <div className='App'>
       <Header header={header} />
-      <h1>Place Holder</h1>
-      <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-      <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-      <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-      <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-      <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-      <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-      <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-      <h1>Place Holder</h1>
+      <div className='Body'>
+        <h1>Place Holder</h1>
+        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
+        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
+        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
+        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
+        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
+        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
+        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
+        <h1>Place Holder</h1>
+      </div>
     </div>
   );
 }

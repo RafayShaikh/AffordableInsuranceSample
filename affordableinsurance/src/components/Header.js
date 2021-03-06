@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import Navigation from './Navigation';
+import MicNoneIcon from '@material-ui/icons/MicNone';
 
 function Header({ header }) {
   return (
@@ -8,32 +9,40 @@ function Header({ header }) {
       {header === 'header' ? (
         <div className='header_container'>
           <div className='header_left'>
-            <div className='header_logo'>
-              <img
-                src='http://www.affordableinsoftx.com/wp-content/uploads/2019/07/aiot-logo.jpg'
-                alt=''
-              />{' '}
-            </div>
+            <img
+              className='header_logo'
+              src='http://www.affordableinsoftx.com/wp-content/uploads/2019/07/aiot-logo.jpg'
+              alt=''
+            />{' '}
             <div className='header_navigation'>
               <Navigation />
             </div>
           </div>
           <div className='header_right'>
-            <div className='header_contact'>3619045275</div>
+            <MicNoneIcon />
+            <p>Talk to us</p>
+            <div className='header_contact'>
+              <h5>361-904-5275</h5>
+            </div>
           </div>
         </div>
       ) : (
         <div className='header_container2'>
-          <div className='header_logo2'>
-            <img
-              src='http://www.affordableinsoftx.com/wp-content/uploads/2019/07/aiot-logo.jpg'
-              alt=''
-            />{' '}
+          <div className='header_left2'>
+            <div className='header_logo2'>
+              <img
+                src='http://www.affordableinsoftx.com/wp-content/uploads/2019/07/aiot-logo.jpg'
+                alt=''
+              />{' '}
+            </div>
+            <div className='header_navigation2'>
+              <Navigation />
+            </div>
           </div>
-          <div className='header_navigation2'>
-            <Navigation />
+          <div className='header_right2'>
+            <MicNoneIcon />
+            <div className='header_contact2'>3619045275</div>
           </div>
-          <div className='header_contact2'>3619045275</div>
         </div>
       )}
     </>
