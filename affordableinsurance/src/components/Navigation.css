@@ -1,0 +1,15 @@
+.navigation_container {
+  width: 60%;
+  display: flex;
+  padding-right: 5px;
+  margin-right: 5px;
+}
+.navigation_list {
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  background-color: rgb(184, 125, 98);
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
