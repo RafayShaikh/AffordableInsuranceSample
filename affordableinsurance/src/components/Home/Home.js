@@ -1,19 +1,17 @@
 import React from 'react';
-import HomeHeadText from './HomeHeadText';
+import Home_Head from './Home_Head';
+import Home_Service from './Home_Service';
 import './Home.css';
 
 function Home() {
   return (
     <div className='home_container'>
       <div className='home_text'>
-        <HomeHeadText />
+        <Home_Head />
       </div>
-      <div className='home_servivces'>Place Holder</div>
-      <div className='home_servivces'>Place Holder</div>
-      <div className='home_servivces'>Place Holder</div>
-      <div className='home_servivces'>Place Holder</div>
-      <div className='home_servivces'>Place Holder</div>
-      <div className='home_servivces'>Place Holder</div>
+      <div className='home_servivces'>
+        <Home_Service />
+      </div>
     </div>
   );
 }
