@@ -24,5 +24,7 @@
 }
 .navigation_list > h4:hover {
   transform: scale(1.2);
+  color: #0a6d8a;
+  padding: 5px;
   background-color: whitesmoke;
 }
