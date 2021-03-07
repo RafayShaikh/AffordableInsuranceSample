@@ -1,0 +1,111 @@
+* {
+  transition: 1s;
+}
+.header_container {
+  background-color: white;
+
+  height: 20vh;
+  width: 100%;
+  z-index: 20;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid rgb(177, 12, 12);
+  box-shadow: 0px -10px 39px rgba(252, 55, 55, 0.596);
+}
+
+.header_left {
+  padding-right: 15px;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header_right {
+  right: 0;
+  position: absolute;
+  padding-left: 15px;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.header_right:hover {
+  transform: scale(1.1);
+}
+.header_logo {
+  object-fit: contain;
+  height: 50%;
+  width: 40%;
+}
+.header_logo > img {
+  width: 70%;
+  object-fit: contain;
+}
+
+.header_navigation {
+  border-top: 1px solid rgb(177, 12, 12);
+  width: 70%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+}
+.header_contact {
+}
+.header_container2 {
+  position: fixed;
+  height: 8vh;
+  width: 100%;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid rgb(177, 12, 12);
+  box-shadow: 0px -10px 39px rgba(252, 55, 55, 0.596);
+}
+.header_left2 {
+  display: flex;
+}
+.header_logo2 {
+  object-fit: contain;
+  height: 50%;
+  width: 40%;
+}
+.header_logo2 > img {
+  padding-left: 10px;
+  width: 70%;
+  object-fit: contain;
+}
+.header_right2 {
+  width: 30%;
+  display: flex;
+  justify-content: row;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+.header_right2:hover {
+  transform: scale(1.1);
+}
+.header_logo2 > img {
+  width: 70%;
+  object-fit: contain;
+}
+
+.header_navigation2 {
+  width: 70%;
+  font-weight: 100;
+  display: flex;
+}
+.header_contact2 {
+}
