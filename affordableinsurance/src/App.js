@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { app } from './features/appSlice';
 import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/HeaderFooter/Header';
+import Footer from './components/HeaderFooter/Footer';
+import Home from './components/Home/Home';
 
 function App() {
   const [header, setHeader] = useState('header');
@@ -25,17 +26,9 @@ function App() {
     <div className='App'>
       <Header header={header} />
       <div className='Body'>
-        <h1>Place Holder</h1>
-        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-        <h1>Place Holder</h1> <h1>Place Holder</h1> <h1>Place Holder</h1>{' '}
-        <h1>Place Holder</h1>
-        <Footer />
+        <Home />
       </div>
+      <Footer />
     </div>
   );
 }
