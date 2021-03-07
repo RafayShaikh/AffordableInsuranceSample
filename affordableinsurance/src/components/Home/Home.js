@@ -8,12 +8,18 @@ function Home() {
       <div className='home_text'>
         <HomeHeadText />
       </div>
-      <div className='home_servivces'>Place Holder</div>
-      <div className='home_servivces'>Place Holder</div>
-      <div className='home_servivces'>Place Holder</div>
-      <div className='home_servivces'>Place Holder</div>
-      <div className='home_servivces'>Place Holder</div>
-      <div className='home_servivces'>Place Holder</div>
+      <div className='home_servivces'>**Place Holder**</div>
+      <div className='home_servivces'>**Place Holder**</div>
+      <div className='home_servivces'>**Place Holder**</div>
+      <div className='home_servivces'>**Place Holder**</div>
+      <div className='home_servivces'>**Place Holder**</div>
+      <div className='home_servivces'>**Place Holder**</div>
+      <div className='home_servivces'>**Place Holder**</div>
+      <div className='home_servivces'>**Place Holder**</div>
+      <div className='home_servivces'>**Place Holder**</div>
+      <div className='home_servivces'>**Place Holder**</div>
+      <div className='home_servivces'>**Place Holder**</div>
+      <div className='home_servivces'>**Place Holder**</div>
     </div>
   );
 }
