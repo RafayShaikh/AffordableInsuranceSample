@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './HomeHeadText.css';
+import './Home_Head.css';
 
-function HomeHeadText() {
+function Home_Head() {
   const [text, setText] = useState([
     'Experienced',
     'Certified',
@@ -33,7 +33,7 @@ function HomeHeadText() {
     <div className='homeheadtext_container'>
       <h2>Need Or Switch an Insurance Plan ?</h2>
       <p>
-        Affordalbe Insurance of Texas is the right place for you because we are{' '}
+        Affordalbe Insurance of Texas is the right place for you because we are
         <h2 style={{ color: color[count % 2] }}>
           {text[count] != null ? text[count] : 'Local'}
         </h2>
@@ -42,4 +42,4 @@ function HomeHeadText() {
   );
 }
 
-export default HomeHeadText;
+export default Home_Head;
