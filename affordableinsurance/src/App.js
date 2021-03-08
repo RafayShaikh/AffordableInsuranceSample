@@ -6,13 +6,13 @@ import Footer from './components/HeaderFooter/Footer';
 import Home from './components/Home/Home';
 
 function App() {
-  const [header, setHeader] = useState('header');
+  const [header, setHeader] = useState('');
 
   const listenScrollEvent = (event) => {
     if (window.scrollY < 73) {
       return setHeader('header');
     } else if (window.scrollY > 70) {
-      return setHeader('header2');
+      return setHeader('2');
     }
   };
 

@@ -22,7 +22,7 @@ function Header({ header }) {
             <MicNoneIcon />
             <p>Talk to us</p>
             <div className='header_contact'>
-              <h5>361-904-5275</h5>
+              <h5>361-854-0207</h5>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ function Header({ header }) {
           </div>
           <div className='header_right2'>
             <MicNoneIcon />
-            <div className='header_contact2'>3619045275</div>
+            <div className='header_contact2'>361-854-0207</div>
           </div>
         </div>
       )}

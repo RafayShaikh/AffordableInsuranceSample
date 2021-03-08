@@ -3,11 +3,11 @@ import './Home_Head.css';
 
 function Home_Head() {
   const [text, setText] = useState([
+    'Experts of Insurance',
     'Experienced',
     'Certified',
     'Licenced',
     'Trusted',
-    'Expert',
   ]);
   const [count, setCount] = useState(0);
   const [loop, setLoop] = useState();
@@ -33,7 +33,7 @@ function Home_Head() {
     <div className='homeheadtext_container'>
       <h2>Need Or Switch an Insurance Plan ?</h2>
       <p>
-        Affordalbe Insurance of Texas is the right place for you because we are
+        Affordable Insurance of Texas is the right place for you because we are
         <h2 style={{ color: color[count % 2] }}>
           {text[count] != null ? text[count] : 'Local'}
         </h2>
