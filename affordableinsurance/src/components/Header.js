@@ -41,7 +41,7 @@ function Header({ header }) {
           </div>
           <div className='header_right2'>
             <MicNoneIcon />
-            <div className='header_contact2'>3619045275</div>
+            <div className='header_contact2'>361-904-5275</div>
           </div>
         </div>
       )}
