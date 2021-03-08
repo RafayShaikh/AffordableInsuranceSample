@@ -3,7 +3,6 @@
 }
 .header_container {
   background-color: white;
-
   height: 20vh;
   width: 100%;
   z-index: 20;
@@ -97,10 +96,6 @@
 }
 .header_right2:hover {
   transform: scale(1.1);
-}
-.header_logo2 > img {
-  width: 70%;
-  object-fit: contain;
 }
 
 .header_navigation2 {
