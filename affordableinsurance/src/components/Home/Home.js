@@ -9,7 +9,7 @@ function Home() {
       <div className='home_text'>
         <Home_Head />
       </div>
-      <div className='home_servivces'>
+      <div className='home_services'>
         <Home_Service />
       </div>
     </div>
