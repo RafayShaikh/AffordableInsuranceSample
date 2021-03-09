@@ -11,3 +11,11 @@
   align-items: center;
   height: 50%;
 }
+
+.home_services {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50%;
+}
