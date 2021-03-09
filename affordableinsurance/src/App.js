@@ -6,7 +6,7 @@ import Footer from './components/HeaderFooter/Footer';
 import Home from './components/Home/Home';
 
 function App() {
-  const [header, setHeader] = useState('');
+  const [header, setHeader] = useState('header');
 
   const listenScrollEvent = (event) => {
     if (window.scrollY < 73) {
