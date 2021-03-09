@@ -5,6 +5,7 @@
   justify-content: space-around;
   align-items: center;
   color: aliceblue !important;
+  cursor: pointer;
   border-top: 1.5px solid red;
 }
 .footer_grid {

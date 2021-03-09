@@ -4,7 +4,15 @@ import './Footer.css';
 function Footer() {
   return (
     <div className='footer_container'>
-      <div className='footer_grid'>
+      <div
+        onClick={() =>
+          window.open(
+            'https://www.google.com/maps/place/Affordable+Insurance+of+Texas/@27.7275529,-97.4145199,19z/data=!4m5!3m4!1s0x86685f8a8bd0067b:0xb1c297acff209a6e!8m2!3d27.7275257!4d-97.414088',
+            '_blank'
+          )
+        }
+        className='footer_grid'
+      >
         <h5>Affordable Insurance of Texas</h5>
         <p>5133 Kostoryz Road Suite B Corpus</p> <p>Christi, TX 78415</p>
       </div>
