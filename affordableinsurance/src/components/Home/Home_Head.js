@@ -31,7 +31,7 @@ function Home_Head() {
 
   return (
     <div className='homeheadtext_container'>
-      <h2>Need Or Switch an Insurance Plan ?</h2>
+      <h2>Need or Switch an Insurance Plan ?</h2>
       <p>
         Affordable Insurance of Texas is the right place for you because we are
         <h2 style={{ color: color[count % 2] }}>
