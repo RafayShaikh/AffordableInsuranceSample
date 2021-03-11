@@ -4,6 +4,11 @@ import './App.css';
 import Header from './components/HeaderFooter/Header';
 import Footer from './components/HeaderFooter/Footer';
 import Home from './components/Home/Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import About from './components/About/About';
+import Contacts from './components/Contacts/Contacts';
+import Products from './components/Products/Products';
+import Services from './components/Services/Services';
 
 function App() {
   const [header, setHeader] = useState('header');
@@ -23,13 +28,21 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
-      <Header header={header} />
-      <div className='Body'>
-        <Home />
+    <Router>
+      <div className='App'>
+        <Header header={header} />
+        <div className='Body'>
+          <Switch>
+            <Route path='/about' component={About} />
+            <Route path='/products' component={Products} />
+            <Route path='/services' component={Services} />
+            <Route path='/contacts' component={Contacts} />
+            <Route path='/' exact component={Home} />
+          </Switch>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

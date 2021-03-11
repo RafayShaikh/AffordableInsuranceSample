@@ -1,15 +1,21 @@
 import React from 'react';
 import './Navigation.css';
+import { Link, useHistory } from 'react-router-dom';
 
 function Navigation() {
+  const history = useHistory();
+
+  const clickHandler = (url) => {
+    history.push(url);
+  };
   return (
     <div className='navigation_container'>
       <div className='navigation_list'>
-        <h4>Home</h4>
-        <h4>About</h4>
-        <h4>Products</h4>
-        <h4>Services</h4>
-        <h4>Contact Us</h4>
+        <h4 onClick={() => clickHandler('./')}>Home</h4>
+        <h4 onClick={() => clickHandler('./about')}>About</h4>
+        <h4 onClick={() => clickHandler('./products')}>Products</h4>
+        <h4 onClick={() => clickHandler('./services')}>Services</h4>
+        <h4 onClick={() => clickHandler('./contacts')}>Contact Us</h4>
       </div>
     </div>
   );
