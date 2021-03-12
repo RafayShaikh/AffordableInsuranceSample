@@ -38,7 +38,7 @@
 }
 .header_right:hover {
   transform: scale(1.1);
-  color: #0a6d8a;
+  color: #0b9ecc;
 }
 .header_logo {
   object-fit: contain;
