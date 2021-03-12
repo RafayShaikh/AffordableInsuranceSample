@@ -13,7 +13,7 @@ function Header({ header }) {
               className='header_logo'
               src='http://www.affordableinsoftx.com/wp-content/uploads/2019/07/aiot-logo.jpg'
               alt=''
-            />{' '}
+            />
             <div className='header_navigation'>
               <Navigation />
             </div>
