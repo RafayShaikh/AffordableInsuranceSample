@@ -1,0 +1,39 @@
+.services_container {
+  padding: 10px;
+}
+.services_offered,
+.services_selection,
+.services_description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #c1040f;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.services_description > p {
+  color: rgb(70, 69, 69);
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.services_offered > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  height: 10%;
+  padding: 50px;
+  font-weight: 500;
+  margin: 10px;
+  transition: transform 0.5s;
+}
+.services_offered > h2:hover {
+  color: #0a6d8a;
+  background-color: #c1040e17;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: scale(1.2);
+}

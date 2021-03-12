@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navigation.css';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Navigation() {
   const history = useHistory();
