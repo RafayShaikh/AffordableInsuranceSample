@@ -12,6 +12,9 @@
   margin-left: 10%;
   margin-right: 10%;
 }
+.services_offered {
+  margin-top: 15px;
+}
 
 .services_description > p {
   color: rgb(70, 69, 69);
@@ -19,21 +22,33 @@
   margin-left: 10%;
   margin-right: 10%;
 }
-.services_offered > h2 {
+.services_offeredBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
+  height: 200px;
+  width: 200px;
+  transition: transform 0.5s;
+}
+
+.services_offeredBox > h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10%;
-  height: 10%;
-  padding: 50px;
   font-weight: 500;
   margin: 10px;
-  transition: transform 0.5s;
 }
-.services_offered > h2:hover {
+.services_offeredBox > .MuiSvgIcon-root {
+  zoom: 4;
+  border-bottom: 0.5px solid #0b9ecc;
+}
+.services_offeredBox:hover {
   color: #0b9ecc;
   background-color: #c1040e17;
   border-radius: 10px;
+  border-bottom: 1px solid #c52126;
   cursor: pointer;
   transform: scale(1.2);
 }

@@ -19,6 +19,7 @@
 
 .home_service_item > .MuiSvgIcon-root {
   zoom: 4;
+  border-bottom: 0.5px solid #0b9ecc;
 }
 .home_service_item:hover {
   color: #0b9ecc;
