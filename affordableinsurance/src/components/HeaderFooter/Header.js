@@ -2,8 +2,15 @@ import React from 'react';
 import './Header.css';
 import Navigation from './Navigation';
 import MicNoneIcon from '@material-ui/icons/MicNone';
+import { useHistory } from 'react-router';
 
 function Header({ header }) {
+  const history = useHistory();
+
+  const clickHandler = (url) => {
+    history.push(url);
+  };
+
   return (
     <>
       {header === 'header' ? (
@@ -11,6 +18,7 @@ function Header({ header }) {
           <div className='header_left'>
             <img
               className='header_logo'
+              onClick={() => clickHandler('./')}
               src='/Full_Color_Logo.png'
               alt=''
             />
@@ -29,11 +37,8 @@ function Header({ header }) {
       ) : (
         <div className='header_container2'>
           <div className='header_left2'>
-            <div className='header_logo2'>
-              <img
-                src='/Full_Color_Logo.png'
-                alt=''
-              />{' '}
+            <div className='header_logo2' onClick={() => clickHandler('./')}>
+              <img src='/Full_Color_Logo.png' alt='' />
             </div>
             <div className='header_navigation2'>
               <Navigation />
