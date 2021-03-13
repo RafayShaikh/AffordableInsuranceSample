@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  color: #c1040f;
+  color: #c52126;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -31,7 +31,7 @@
   transition: transform 0.5s;
 }
 .services_offered > h2:hover {
-  color: #0a6d8a;
+  color: #0b9ecc;
   background-color: #c1040e17;
   border-radius: 10px;
   cursor: pointer;

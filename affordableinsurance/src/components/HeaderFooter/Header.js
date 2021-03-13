@@ -11,7 +11,7 @@ function Header({ header }) {
           <div className='header_left'>
             <img
               className='header_logo'
-              src='http://www.affordableinsoftx.com/wp-content/uploads/2019/07/aiot-logo.jpg'
+              src='/Full_Color_Logo.png'
               alt=''
             />
             <div className='header_navigation'>
@@ -31,7 +31,7 @@ function Header({ header }) {
           <div className='header_left2'>
             <div className='header_logo2'>
               <img
-                src='http://www.affordableinsoftx.com/wp-content/uploads/2019/07/aiot-logo.jpg'
+                src='/Full_Color_Logo.png'
                 alt=''
               />{' '}
             </div>

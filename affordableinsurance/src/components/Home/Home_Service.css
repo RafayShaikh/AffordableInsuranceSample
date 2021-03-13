@@ -4,7 +4,7 @@
 }
 
 .home_service_item {
-  color: #c1040f;
+  color: #c52126;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +21,7 @@
   zoom: 4;
 }
 .home_service_item:hover {
-  color: #0a6d8a;
+  color: #0b9ecc;
   background-color: #c1040e17;
   transform: scale(1.3);
   border-radius: 10px;
