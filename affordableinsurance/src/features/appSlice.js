@@ -3,27 +3,23 @@ import { createSlice } from '@reduxjs/toolkit';
 export const appSlice = createSlice({
   name: 'app',
   initialState: {
-    value: 0,
+    insuranceLogo: null,
+    insuranceName: null,
+    insuranceDescription: null,
   },
   reducers: {
-    increment: (state) => {},
-    decrement: (state) => {
-      state.value -= 1;
+    add: (state, action) => {
+      state.insuranceLogo = action.payload.insuranceLogo;
+      state.insuranceName = action.payload.insuranceName;
+      state.insuranceDescription = action.payload.insuranceDescription;
     },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    remove: (state) => {
+      state = null;
     },
   },
 });
 
-export const { increment, decrement, incrementByAmount } = appSlice.actions;
-
-export const incrementAsync = (amount) => (dispatch) => {
-  setTimeout(() => {
-    dispatch(incrementByAmount(amount));
-  }, 1000);
-};
-
-export const selectCount = (state) => state.app.value;
+export const { add, remove } = appSlice.actions;
+export const selectAppData = (state) => state.app;
 
 export default appSlice.reducer;

@@ -11,7 +11,7 @@
 }
 
 .about_bios > h2:hover {
-  color: #0b9ecc;
+  color: var(--secondary);
   background-color: #c1040e17;
   border-radius: 10px;
   cursor: pointer;

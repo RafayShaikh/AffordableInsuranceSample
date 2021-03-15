@@ -1,42 +1,63 @@
 import React, { useState } from 'react';
 import './Services.css';
-import DriveEtaIcon from '@material-ui/icons/DriveEta';
-import AssignmentIcon from '@material-ui/icons/Assignment';
-import CloudIcon from '@material-ui/icons/Cloud';
-import BusinessIcon from '@material-ui/icons/Business';
-import MotorcycleIcon from '@material-ui/icons/Motorcycle';
-import RvHookupIcon from '@material-ui/icons/RvHookup';
-import LocalShippingIcon from '@material-ui/icons/LocalShipping';
-import DirectionsBoatIcon from '@material-ui/icons/DirectionsBoat';
-import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
-import StoreIcon from '@material-ui/icons/Store';
-import WavesIcon from '@material-ui/icons/Waves';
-import BeachAccessIcon from '@material-ui/icons/BeachAccess';
-import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import LocalDrinkIcon from '@material-ui/icons/LocalDrink';
-import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
+import {
+  DriveEta,
+  Assignment,
+  Cloud,
+  Business,
+  Motorcycle,
+  RvHookup,
+  LocalShipping,
+  DirectionsBoat,
+  SupervisorAccount,
+  Store,
+  Waves,
+  BeachAccess,
+  BusinessCenter,
+  AttachMoney,
+  LocalDrink,
+  VerifiedUser,
+} from '@material-ui/icons';
 import { SvgIcon } from '@material-ui/core';
-function Services() {
-  const [services, setServices] = useState([
-    [DriveEtaIcon, 'Auto/Trucks'],
-    [AssignmentIcon, 'Bonds'],
-    [CloudIcon, 'Windstorm'],
-    [BusinessIcon, 'Builders Risk'],
-    [MotorcycleIcon, 'Motorcycle'],
-    [RvHookupIcon, 'Recreational Vehicles'],
-    [LocalShippingIcon, 'Mobile Homes'],
-    [DirectionsBoatIcon, 'Boats'],
-    [WavesIcon, 'Flood'],
-    [SupervisorAccountIcon, 'Workers’ Comp'],
-    [StoreIcon, 'Commercial Insurance'],
-    [BusinessCenterIcon, 'Commercial Liability'],
-    [AttachMoneyIcon, 'Renter’s policies'],
-    [LocalDrinkIcon, 'Liquor Liability'],
-    [BeachAccessIcon, 'Mexico Insurance'],
-    [VerifiedUserIcon, 'SR22s'],
-  ]);
+import Typist from 'react-typist';
+import { useHistory } from 'react-router';
+import { add, appSlice, remove } from '../../features/appSlice';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
+function Services({ match }) {
+  const [services, setServices] = useState([
+    [DriveEta, 'Auto/Trucks'],
+    [Assignment, 'Bonds'],
+    [Cloud, 'Windstorm'],
+    [Business, 'Builders Risk'],
+    [Motorcycle, 'Motorcycle'],
+    [RvHookup, 'Recreational Vehicles'],
+    [LocalShipping, 'Mobile Homes'],
+    [DirectionsBoat, 'Boats'],
+    [Waves, 'Flood'],
+    [SupervisorAccount, 'Workers’ Comp'],
+    [Store, 'Commercial Insurance'],
+    [BusinessCenter, 'Commercial Liability'],
+    [AttachMoney, 'Renter’s policies'],
+    [LocalDrink, 'Liquor Liability'],
+    [BeachAccess, 'Mexico Insurance'],
+    [VerifiedUser, 'SR22s'],
+  ]);
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const clickHandler = (url, logo, name, text) => {
+    const data = {
+      insuranceLogo: <SvgIcon component={logo} />,
+      insuranceName: name,
+      InsuranceDescription: text,
+    };
+    dispatch(add(data));
+    history.push(url);
+  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className='services_container'>
       <div className='services_description'>
@@ -54,8 +75,13 @@ function Services() {
         <h2>Select One for More Information</h2>
       </div>
       <div className='services_offered'>
-        {services.map((val) => (
-          <div className='services_offeredBox'>
+        {services.map((val, id) => (
+          <div
+            className='services_offeredBox'
+            onClick={() =>
+              clickHandler(`${match.url}/${id}`, val[0], val[1], val[2])
+            }
+          >
             <SvgIcon component={val[0]} />
             <h2>{val[1]}</h2>
           </div>

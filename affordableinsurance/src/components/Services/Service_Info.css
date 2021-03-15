@@ -1,0 +1,47 @@
+.service_infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+}
+.service_infoHead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+  margin-bottom: 5%;
+  border-bottom: 1px solid var(--primary);
+  font-size: larger;
+}
+.service_infoHead > .MuiSvgIcon-root {
+  zoom: 4;
+}
+.service_infoDescription {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.service_infoDescription > p {
+  margin-bottom: 5%;
+}
+.service_infoButton {
+  display: flex;
+  cursor: pointer;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bolder;
+  transition: all 0.3s;
+  justify-content: center;
+  align-items: center;
+}
+.service_infoButton:hover {
+  background-color: var(--background-primary);
+  color: var(--secondary);
+  border-radius: 1px;
+}

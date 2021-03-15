@@ -1,5 +1,6 @@
 * {
-  transition: 0.7s;
+  transition: 1s;
+  overflow-x: hidden;
 }
 .App {
   color: gray;
@@ -20,4 +21,6 @@
 *::-webkit-scrollbar-thumb {
   background-color: #0a6d8a;
   outline: 1px solid #0a6d8a;
+}
+@media screen and (max-width: 708px) {
 }
