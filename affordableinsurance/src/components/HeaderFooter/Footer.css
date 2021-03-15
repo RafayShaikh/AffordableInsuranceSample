@@ -1,21 +1,22 @@
 .footer_container {
   display: flex;
-  background-color: #0b9ecc !important;
+  background-color: var(--secondary) !important;
   padding: 5px;
   justify-content: space-around;
   align-items: center;
   color: aliceblue !important;
   cursor: pointer;
-  border-top: 1.5px solid red;
+  border-top: 1.5px solid var(--primary);
+  flex-wrap: wrap;
 }
 .footer_grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1rem;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   margin: 5px;
-  width: 22%;
+  width: 200px;
   transition: transform 0.2s;
 }
 .footer_grid > h5 {
@@ -32,4 +33,6 @@
 .footer_grid:hover {
   transform: scale(1.1);
   background-color: rgba(240, 248, 255, 0.055);
+}
+@media screen and (max-width: 708px) {
 }

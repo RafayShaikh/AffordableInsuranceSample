@@ -14,7 +14,8 @@ function Footer() {
         className='footer_grid'
       >
         <h5>Affordable Insurance of Texas</h5>
-        <p>5133 Kostoryz Road Suite B Corpus</p> <p>Christi, TX 78415</p>
+        <p>5133 Kostoryz Road Suite B,</p>
+        <p>Corpus Christi, TX 78415</p>
       </div>
       <div className='footer_grid'>
         <h5>Let's Have A Conversation</h5>

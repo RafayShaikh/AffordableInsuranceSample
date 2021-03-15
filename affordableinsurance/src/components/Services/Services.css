@@ -8,12 +8,14 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  color: #c52126;
+  color: var(--primary);
   margin-left: 10%;
   margin-right: 10%;
 }
 .services_offered {
   margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 5px;
 }
 
 .services_description > p {
@@ -42,13 +44,12 @@
 }
 .services_offeredBox > .MuiSvgIcon-root {
   zoom: 4;
-  border-bottom: 0.5px solid #0b9ecc;
+  border-bottom: 0.5px solid var(--secondary);
 }
 .services_offeredBox:hover {
-  color: #0b9ecc;
-  background-color: #c1040e17;
+  color: var(--secondary);
+  background-color: var(--background-primary);
   border-radius: 10px;
-  border-bottom: 1px solid #c52126;
   cursor: pointer;
   transform: scale(1.2);
 }
