@@ -1,0 +1,19 @@
+.about_bios > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  height: 90%;
+  padding: 50px;
+  font-weight: 500;
+  margin: 10px;
+  transition: transform 0.3s;
+}
+
+.about_bios > h2:hover {
+  color: var(--secondary);
+  background-color: #c1040e17;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: scale(1.5);
+}

@@ -3,7 +3,6 @@
 }
 .header_container {
   background-color: white;
-
   height: 20vh;
   width: 100%;
   z-index: 20;
@@ -12,8 +11,9 @@
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  border-bottom: 1px solid rgb(177, 12, 12);
+  border-bottom: 1px solid var(--primary);
   box-shadow: 0px -10px 39px rgba(252, 55, 55, 0.596);
+  overflow-y: hidden;
 }
 
 .header_left {
@@ -39,20 +39,21 @@
 }
 .header_right:hover {
   transform: scale(1.1);
-  color: #0a6d8a;
+  color: var(--secondary);
 }
 .header_logo {
-  object-fit: contain;
-  height: 50%;
-  width: 40%;
+  width: 250px;
+  padding: 5px;
 }
 .header_logo > img {
-  width: 70%;
-  object-fit: contain;
+  object-fit: cover;
 }
-
+.header_logo:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 .header_navigation {
-  border-top: 1px solid rgb(177, 12, 12);
+  border-top: 1px solid var(--primary);
   width: 70%;
   height: 40%;
   display: flex;
@@ -70,21 +71,26 @@
   flex-direction: row;
   align-items: center;
   background-color: white;
-  border-bottom: 1px solid rgb(177, 12, 12);
+  border-bottom: 1px solid var(--primary);
   box-shadow: 0px -10px 39px rgba(252, 55, 55, 0.596);
+  overflow-y: hidden;
 }
 .header_left2 {
   display: flex;
 }
 .header_logo2 {
   object-fit: contain;
-  height: 50%;
   width: 40%;
+  transition: transform 0.2s;
+}
+.header_logo2:hover {
+  transform: scale(1.05);
 }
 .header_logo2 > img {
   padding-left: 10px;
-  width: 70%;
+  width: 60%;
   object-fit: contain;
+  cursor: pointer;
 }
 .header_right2 {
   width: 30%;
@@ -98,15 +104,46 @@
 .header_right2:hover {
   transform: scale(1.1);
 }
-.header_logo2 > img {
-  width: 70%;
-  object-fit: contain;
-}
 
 .header_navigation2 {
   width: 70%;
   font-weight: 100;
   display: flex;
+  align-items: center;
 }
 .header_contact2 {
+}
+@media screen and (max-width: 708px) {
+  .header_container {
+    height: 15vh;
+  }
+
+  .header_logo {
+    width: 150px;
+    padding: 5px;
+  }
+  .header_navigation {
+    border-top: 1px solid var(--primary);
+    width: 100%;
+    height: 30%;
+  }
+  .header_right {
+    width: 20%;
+    font-size: xx-small;
+  }
+
+  .header_left {
+    margin-right: 12%;
+    margin-left: 2%;
+    width: 95%;
+    height: 100%;
+    font-size: xx-small;
+  }
+  .header_left2 {
+    font-size: xx-small;
+  }
+  .header_right2 {
+    width: 40%;
+    font-size: xx-small;
+  }
 }

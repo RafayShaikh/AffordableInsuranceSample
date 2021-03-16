@@ -1,26 +1,32 @@
 .home_service_container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.home_service_item {
-  color: #c1040f;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: var(--primary);
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.home_service_item {
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  margin: 10px;
-  transition: transform 0.4s;
-  cursor: pointer;
+  flex-direction: column;
+  margin: 5% 10%;
+  padding: 2%;
+  height: 200px;
+  width: 200px;
+  transition: transform 0.5s;
 }
 
 .home_service_item > .MuiSvgIcon-root {
   zoom: 4;
+  border-bottom: 0.5px solid var(--secondary);
 }
 .home_service_item:hover {
-  color: #0a6d8a;
-  background-color: #c1040e17;
+  cursor: pointer;
+  color: var(--secondary);
+  background-color: var(--background-primary);
   transform: scale(1.3);
   border-radius: 10px;
 }
