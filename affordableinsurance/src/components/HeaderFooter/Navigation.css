@@ -10,6 +10,7 @@
   overflow-y: hidden;
 }
 .navigation_list {
+  color: var(--primary);
   display: flex;
   width: 100%;
   align-items: center;

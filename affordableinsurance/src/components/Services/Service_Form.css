@@ -57,3 +57,17 @@
   align-items: center;
   margin-bottom: 10px;
 }
+.service_formSection > p {
+  color: var(--primary);
+  margin: 2%;
+}
+
+.form-input {
+  display: block;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 2px;
+  height: 40px;
+  width: 100%;
+  border: none;
+}
