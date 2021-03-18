@@ -30,20 +30,27 @@ const useForm = (callback, validate) => {
     });
   };
   const handleNext = (e) => {
+    setErrors(validate(values));
+
     let check =
       Object.keys(errors).length - Object.keys(validate(values)).length;
-    setErrors(validate(values));
-    if (steps == 1 && (check == 2 || check == 0)) {
+
+    alert(check);
+    if (steps == 1 && check == 2) {
       setSteps(steps + 1);
+      setErrors({});
     }
-    if (steps == 2 && (check == 1 || check == 0)) {
+    if (steps == 2 && check == 1) {
       setSteps(steps + 1);
+      setErrors({});
     }
-    if (steps == 3 && (check == 2 || check == 0)) {
+    if (steps == 3 && check == 2) {
       setSteps(steps + 1);
+      setErrors({});
     }
-    if (steps == 4 && (check == 2 || check == 0)) {
+    if (steps == 4 && check == 2) {
       setSteps(steps + 1);
+      setErrors({});
     }
   };
   const handleSubmit = (e) => {
