@@ -8,11 +8,11 @@ function Home_Head() {
     'Experienced',
     'Certified',
     'Licenced',
-    'Trusted',
+    'Trusted',  
   ]);
   const [count, setCount] = useState(0);
   const [loop, setLoop] = useState();
-  const [color, setColor] = useState(['#c1040f', '#0a6d8a']);
+  const [color, setColor] = useState(['#c52126', '#0b9ecc']);
 
   useEffect(() => {
     setLoop(
