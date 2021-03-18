@@ -1,0 +1,21 @@
+.contacts_container {
+  padding: 10px;
+}
+
+.contacts_infoForm,
+.contacts_description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: var(--primary);
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.contacts_description > p {
+  color: rgb(70, 69, 69);
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
