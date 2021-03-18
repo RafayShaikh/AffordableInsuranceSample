@@ -11,10 +11,6 @@
   align-items: center;
   height: 50%;
 }
-<<<<<<< HEAD
-.home_servivces {
-  font-size: 36px;
-=======
 
 .home_services {
   padding: 10px;
@@ -22,5 +18,4 @@
   justify-content: space-around;
   align-items: center;
   height: 50%;
->>>>>>> c00e8b06bc8c25b6167ad20861b1023bba5833ea
 }
