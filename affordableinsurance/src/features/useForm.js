@@ -34,12 +34,17 @@ const useForm = (callback, validate) => {
       Object.keys(errors).length - Object.keys(validate(values)).length;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     if (steps == 1 && check == 2) {
 =======
     setErrors(validate(values));
     if (steps == 1 && (check == 2 || check == 0)) {
 >>>>>>> parent of 71b3738... Merge pull request #22 from RafayShaikh/Rafay-Branch
+=======
+    setErrors(validate(values));
+    if (steps == 1 && (check == 2 || check == 0)) {
+>>>>>>> parent of a88404d... FIxed Validation Bug
 =======
     setErrors(validate(values));
     if (steps == 1 && (check == 2 || check == 0)) {
