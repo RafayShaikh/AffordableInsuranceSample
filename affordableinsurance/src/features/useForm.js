@@ -32,38 +32,25 @@ const useForm = (callback, validate) => {
   const handleNext = (e) => {
     let check =
       Object.keys(errors).length - Object.keys(validate(values)).length;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
+    setErrors(validate(values));
     if (steps == 1 && check == 2) {
-=======
-    setErrors(validate(values));
-    if (steps == 1 && (check == 2 || check == 0)) {
->>>>>>> parent of 71b3738... Merge pull request #22 from RafayShaikh/Rafay-Branch
-=======
-    setErrors(validate(values));
-    if (steps == 1 && (check == 2 || check == 0)) {
->>>>>>> parent of a88404d... FIxed Validation Bug
-=======
-    setErrors(validate(values));
-    if (steps == 1 && (check == 2 || check == 0)) {
->>>>>>> parent of a88404d... FIxed Validation Bug
-=======
-    setErrors(validate(values));
-    if (steps == 1 && (check == 2 || check == 0)) {
->>>>>>> parent of a88404d... FIxed Validation Bug
       setSteps(steps + 1);
+      setErrors({});
     }
-    if (steps == 2 && (check == 1 || check == 0)) {
+    if (steps == 2 && check == 1) {
       setSteps(steps + 1);
+      setErrors({});
+
     }
-    if (steps == 3 && (check == 2 || check == 0)) {
+    if (steps == 3 && check == 2 ) {
       setSteps(steps + 1);
+      setErrors({});
+
     }
-    if (steps == 4 && (check == 2 || check == 0)) {
+    if (steps == 4 && check == 2 ) {
       setSteps(steps + 1);
+      setErrors({});
+
     }
   };
   const handleSubmit = (e) => {
