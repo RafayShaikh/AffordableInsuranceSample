@@ -6,20 +6,21 @@ const useForm = (callback, validate) => {
   const dataSlice = useSelector(selectAppData);
 
   const [values, setValues] = useState({
-    firstName: null,
-    lastName: null,
+    firstName: '',
+    lastName: '',
     selection: dataSlice?.insuranceName,
-    dob: null,
-    email: null,
-    phone: null,
-    address: null,
-    street: null,
-    city: null,
-    state: null,
-    zipcode: null,
+    dob: '',
+    email: '',
+    phone: '',
+    address: '',
+    street: '',
+    city: '',
+    state: '',
+    zipcode: '',
   });
   const [errors, setErrors] = useState({});
   const [steps, setSteps] = useState(1);
+  const [counter, setCounter] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -30,9 +31,12 @@ const useForm = (callback, validate) => {
     });
   };
   const handleNext = (e) => {
+    setCounter(true);
     let check =
       Object.keys(errors).length - Object.keys(validate(values)).length;
-    setErrors(validate(values));
+    console.log(Object.keys(errors).length);
+    console.log(Object.keys(validate(values)).length);
+
     if (steps == 1 && check == 2) {
       setSteps(steps + 1);
       setErrors({});
@@ -61,8 +65,20 @@ const useForm = (callback, validate) => {
       callback();
     }
   }, [errors]);
+  useEffect(() => {
+    setCounter(false);
+    setErrors(validate(values));
+  }, [steps]);
 
-  return { steps, handleChange, handleSubmit, handleNext, values, errors };
+  return {
+    counter,
+    steps,
+    handleChange,
+    handleSubmit,
+    handleNext,
+    values,
+    errors,
+  };
 };
 
 export default useForm;
