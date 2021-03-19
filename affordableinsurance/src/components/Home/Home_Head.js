@@ -8,7 +8,7 @@ function Home_Head() {
     'Experienced',
     'Certified',
     'Licenced',
-    'Trusted',  
+    'Trusted',
   ]);
   const [count, setCount] = useState(0);
   const [loop, setLoop] = useState();

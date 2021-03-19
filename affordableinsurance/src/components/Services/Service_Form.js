@@ -12,6 +12,7 @@ function Service_Form() {
   const dataSlice = useSelector(selectAppData);
   const history = useHistory();
   const {
+    counter,
     steps,
     handleNext,
     handleChange,
@@ -106,7 +107,7 @@ function Service_Form() {
                 value={values.firstName}
                 onChange={handleChange}
               />
-              {errors.firstName && <p>{errors.firstName}</p>}
+              {counter && errors.firstName && <p>{errors.firstName}</p>}
 
               <label>Last Name</label>
               <input
@@ -117,7 +118,7 @@ function Service_Form() {
                 value={values.lastName}
                 onChange={handleChange}
               />
-              {errors.lastName && <p>{errors.lastName}</p>}
+              {counter && errors.lastName && <p>{errors.lastName}</p>}
               <div className='service_formNext' onClick={handleNext}>
                 Next
               </div>
@@ -135,7 +136,7 @@ function Service_Form() {
                 value={values.dob}
                 onChange={handleChange}
               />
-              {errors.dob && <p>{errors.dob}</p>}
+              {counter && errors.dob && <p>{errors.dob}</p>}
 
               <div className='service_formNext' onClick={handleNext}>
                 Next
@@ -154,7 +155,7 @@ function Service_Form() {
                 value={values.email}
                 onChange={handleChange}
               />
-              {errors.email && <p>{errors.email}</p>}
+              {counter && errors.email && <p>{errors.email}</p>}
 
               <label>Phone Number</label>
               <input
@@ -165,7 +166,7 @@ function Service_Form() {
                 value={values.phone}
                 onChange={handleChange}
               />
-              {errors.phone && <p>{errors.phone}</p>}
+              {counter && errors.phone && <p>{errors.phone}</p>}
 
               <div className='service_formNext' onClick={handleNext}>
                 Next
@@ -185,7 +186,7 @@ function Service_Form() {
                 value={values.street}
                 onChange={handleChange}
               />
-              {errors.street && <p>{errors.street}</p>}
+              {counter && errors.street && <p>{errors.street}</p>}
 
               <label>City</label>
               <input
@@ -196,7 +197,7 @@ function Service_Form() {
                 value={values.city}
                 onChange={handleChange}
               />
-              {errors.city && <p>{errors.city}</p>}
+              {counter && errors.city && <p>{errors.city}</p>}
 
               <label>State</label>
               <input
@@ -207,7 +208,7 @@ function Service_Form() {
                 value={values.state}
                 onChange={handleChange}
               />
-              {errors.state && <p>{errors.state}</p>}
+              {counter && errors.state && <p>{errors.state}</p>}
 
               <label>Zipcode</label>
               <input
@@ -218,7 +219,7 @@ function Service_Form() {
                 value={values.zipcode}
                 onChange={handleChange}
               />
-              {errors.zipcode && <p>{errors.zipcode}</p>}
+              {counter && errors.zipcode && <p>{errors.zipcode}</p>}
 
               <button className='service_formNext' type='submit'>
                 Submit
