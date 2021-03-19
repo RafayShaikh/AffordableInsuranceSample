@@ -30,26 +30,25 @@ const useForm = (callback, validate) => {
     });
   };
   const handleNext = (e) => {
-    setErrors(validate(values));
-
     let check =
       Object.keys(errors).length - Object.keys(validate(values)).length;
+<<<<<<< HEAD
 
     if (steps == 1 && check == 2) {
+=======
+    setErrors(validate(values));
+    if (steps == 1 && (check == 2 || check == 0)) {
+>>>>>>> parent of 71b3738... Merge pull request #22 from RafayShaikh/Rafay-Branch
       setSteps(steps + 1);
-      setErrors({});
     }
-    if (steps == 2 && check == 1) {
+    if (steps == 2 && (check == 1 || check == 0)) {
       setSteps(steps + 1);
-      setErrors({});
     }
-    if (steps == 3 && check == 2) {
+    if (steps == 3 && (check == 2 || check == 0)) {
       setSteps(steps + 1);
-      setErrors({});
     }
-    if (steps == 4 && check == 2) {
+    if (steps == 4 && (check == 2 || check == 0)) {
       setSteps(steps + 1);
-      setErrors({});
     }
   };
   const handleSubmit = (e) => {
