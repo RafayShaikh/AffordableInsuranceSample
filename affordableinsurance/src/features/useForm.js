@@ -30,10 +30,9 @@ const useForm = (callback, validate) => {
     });
   };
   const handleNext = (e) => {
-    setErrors(validate(values));
-
     let check =
       Object.keys(errors).length - Object.keys(validate(values)).length;
+    setErrors(validate(values));
     if (steps == 1 && check == 2) {
       setSteps(steps + 1);
       setErrors({});
