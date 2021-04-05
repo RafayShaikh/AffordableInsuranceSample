@@ -8,6 +8,7 @@
   justify-content: center;
   transition: all 0.5s;
   overflow-y: hidden;
+  animation: loading 1.5s linear forwards;
 }
 .navigation_list {
   color: var(--primary);
