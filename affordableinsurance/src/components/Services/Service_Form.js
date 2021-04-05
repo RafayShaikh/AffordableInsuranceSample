@@ -25,51 +25,6 @@ function Service_Form() {
     setSubmitted(true);
   }
 
-  /*
-  const clickFName = (event) => {
-    const { value } = event.target;
-    setForm({ ...values, firstName: value });
-  };3
-  const clickLName = (event) => {
-    const { value } = event.target;
-    setForm({ ...values, lastName: value });
-  };
-  const clickDOB = (event) => {
-    const { value } = event.target;
-    setForm({ ...values, dob: value });
-  };
-  const clickEmail = (event) => {
-    const { value } = event.target;
-    setForm({ ...values, email: value });
-  };
-  const clickPhone = (event) => {
-    const { value } = event.target;
-    setForm({ ...values, phone: value });
-  };
-  const clickStreet = (event) => {
-    const { value } = event.target;
-    setForm({ ...values, street: value });
-  };
-  const clickCity = (event) => {
-    const { value } = event.target;
-    setForm({ ...values, city: value });
-  };
-  const clickState = (event) => {
-    const { value } = event.target;
-    setForm({ ...values, state: value });
-  };
-  const clickZipcode = (event) => {
-    const { value } = event.target;
-    setForm({ ...values, zipcode: value });
-  };
-  const submit = () => {
-    var temp =
-      values.street + ', ' + values.city + ', ' + values.state + ', ' + values.zipcode;
-    setForm({ ...values, address: temp });
-
-    setSubmitted(true);
-  };*/
-
   useEffect(() => {
     if (dataSlice?.insuranceName === null) {
       history.push('/services');

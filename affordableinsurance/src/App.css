@@ -22,5 +22,25 @@
   background-color: #0a6d8a;
   outline: 1px solid #0a6d8a;
 }
+@keyframes loading {
+  from {
+    opacity: 0;
+    transform: rotateY(100deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+@keyframes loading2 {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 @media screen and (max-width: 708px) {
 }

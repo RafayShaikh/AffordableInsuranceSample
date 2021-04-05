@@ -18,7 +18,7 @@ function Header({ header }) {
           <div className='header_left'>
             <img
               className='header_logo'
-              onClick={() => clickHandler('./')}
+              onClick={() => clickHandler('/')}
               src='/Full_Color_Logo.png'
               alt=''
             />
@@ -37,7 +37,7 @@ function Header({ header }) {
       ) : (
         <div className='header_container2'>
           <div className='header_left2'>
-            <div className='header_logo2' onClick={() => clickHandler('./')}>
+            <div className='header_logo2' onClick={() => clickHandler('/')}>
               <img src='/Full_Color_Logo.png' alt='' />
             </div>
             <div className='header_navigation2'>

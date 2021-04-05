@@ -72,7 +72,9 @@ function Services({ match }) {
         </p>
       </div>
       <div className='services_selection'>
-        <h2>Select One for More Information</h2>
+        <Typist avgTypingDelay={25} cursor={{ show: false }}>
+          <h2>Select One for More Information</h2>
+        </Typist>
       </div>
       <div className='services_offered'>
         {services.map((val, id) => (

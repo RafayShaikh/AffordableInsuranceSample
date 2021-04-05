@@ -1,0 +1,39 @@
+.home_bannerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-image: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--primary) 10% 90%,
+    var(--primary) 100%
+  );
+  border-radius: 100px;
+  animation: flashing 1.5s infinite ease-in-out;
+}
+
+@keyframes flashing {
+  to {
+    background-image: linear-gradient(
+      90deg,
+      var(--primary) 0%,
+      var(--primary) 10% 90%,
+      var(--primary) 100%
+    );
+  }
+
+  from {
+    background-image: linear-gradient(
+      90deg,
+      var(--secondary) 0%,
+      var(--primary) 5% 95%,
+      var(--secondary) 100%
+    );
+  }
+}

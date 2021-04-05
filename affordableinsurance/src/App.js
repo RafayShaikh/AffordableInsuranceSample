@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import 'babel-polyfill';
 import { app } from './features/appSlice';
 import './App.css';
 import Header from './components/HeaderFooter/Header';
 import Footer from './components/HeaderFooter/Footer';
 import Home from './components/Home/Home';
+import Admin from './components/Admin/Admin';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import About from './components/About/About';
 import Contacts from './components/Contacts/Contacts';
@@ -35,6 +37,7 @@ function App() {
         <Header header={header} />
         <div className='Body'>
           <Switch>
+            <Route path='/admin' exact component={Admin} />
             <Route path='/about' exact component={About} />
             <Route path='/products' exact component={Products} />
             <Route path='/services' exact component={Services} />

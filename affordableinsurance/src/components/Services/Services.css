@@ -12,6 +12,9 @@
   margin-left: 10%;
   margin-right: 10%;
 }
+.services_selection {
+  animation: loading 0.5s linear;
+}
 .services_offered {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -23,6 +26,7 @@
   margin: 2%;
   margin-left: 10%;
   margin-right: 10%;
+  animation: loading 0.2s linear forwards;
 }
 .services_offeredBox {
   display: flex;
@@ -41,10 +45,12 @@
   justify-content: center;
   font-weight: 500;
   margin: 10px;
+  animation: loading2 0.8s linear;
 }
 .services_offeredBox > .MuiSvgIcon-root {
   zoom: 4;
   border-bottom: 0.5px solid var(--secondary);
+  animation: loading 0.8s linear;
 }
 .services_offeredBox:hover {
   color: var(--secondary);
