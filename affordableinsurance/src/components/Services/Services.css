@@ -53,3 +53,7 @@
   cursor: pointer;
   transform: scale(1.2);
 }
+
+.services_description {
+  flex-direction: column;
+}
