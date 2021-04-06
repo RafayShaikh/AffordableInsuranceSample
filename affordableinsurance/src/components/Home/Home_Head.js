@@ -33,7 +33,7 @@ function Home_Head() {
   return (
     <div className='homeheadtext_container'>
       <Typist avgTypingDelay={55} cursor={{ show: false }}>
-        <h2>Need or Switch an Insurance Plan ?</h2>
+        <h2>Affordable Insurance of Texas can save you money!</h2>
       </Typist>
 
       <p>
