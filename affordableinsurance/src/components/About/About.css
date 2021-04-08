@@ -2,18 +2,44 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10%;
-  height: 90%;
-  padding: 50px;
   font-weight: 500;
   margin: 10px;
-  transition: transform 0.3s;
+  animation: loading2 0.8s linear;
 }
 
-.about_bios > h2:hover {
+.about_individuals > h2:hover {
   color: var(--secondary);
-  background-color: #c1040e17;
-  border-radius: 10px;
+
   cursor: pointer;
-  transform: scale(1.5);
+  transform: scale(1.2);
+}
+
+.about_individuals {
+  margin-top: 2%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.about_description {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.about_description > h2 {
+  align-items: center;
+  margin-bottom: 1%;
+}
+
+.about_quotes {
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  margin-top: 1%;
 }

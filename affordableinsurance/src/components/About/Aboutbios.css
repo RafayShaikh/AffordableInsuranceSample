@@ -1,0 +1,17 @@
+.about_bioHead > h2 {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 1%;
+}
+
+.about_bioDescription {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
