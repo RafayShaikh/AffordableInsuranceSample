@@ -3,13 +3,15 @@ import './About.css';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { add, appSlice, remove } from '../../features/appSlice';
+import Typist from 'react-typist';
+
 
 
 
 function About({ match }) {
   const [about, setAbout] = useState([
     'Lauro Cuellar',
-    'Arthur Garza',
+    'Arthur V. Garza',
     'Robert Valdez III',
     'Jeremy Dominguez',
     'Pris Ortiz',
@@ -52,10 +54,10 @@ function About({ match }) {
         </p>
       </div>
       <div className='about_quotes'>
-        <h3>We Offer Quotes By:</h3>
-        <div>Phone</div>
-        <div>Email</div>
-        <div>Fax</div>
+         <Typist avgTypingDelay={50} cursor={{ show: false }}>
+        <h2>Get To Know Us Today</h2>
+        </Typist>
+
         <div className='about_bios'>
           {about.map((val, id) => (
            <div 

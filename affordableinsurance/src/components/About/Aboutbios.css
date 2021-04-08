@@ -3,6 +3,7 @@
   justify-content: center;
   display: flex;
   margin-bottom: 1%;
+  animation: loading2 0.9s linear;
 }
 
 .about_bioDescription {
