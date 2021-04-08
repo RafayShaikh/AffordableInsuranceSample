@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+  import React, { useState } from 'react';
 import './Services.css';
 import {
   DriveEta,
@@ -44,8 +44,10 @@ function Services({ match }) {
     [BeachAccess, 'Mexico Insurance'],
     [VerifiedUser, 'SR22s'],
   ]);
+
   const history = useHistory();
   const dispatch = useDispatch();
+
   const clickHandler = (url, logo, name, text) => {
     const data = {
       insuranceLogo: <SvgIcon component={logo} />,
@@ -55,9 +57,11 @@ function Services({ match }) {
     dispatch(add(data));
     history.push(url);
   };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className='services_container'>
       <div className='services_description'>

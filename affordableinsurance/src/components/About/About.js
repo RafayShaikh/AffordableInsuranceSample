@@ -1,6 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import './About.css';
-function About() {
+import { useHistory } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { add, appSlice, remove } from '../../features/appSlice';
+
+
+
+function About({ match }) {
   const [about, setAbout] = useState([
     'Lauro Cuellar',
     'Arthur Garza',
@@ -10,12 +16,28 @@ function About() {
     'Javier De La Cerda',
   ]);
 
-  useEffect(() => {
+
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+
+  const clickHandler = (url, name, text) => {
+    const data = {
+      individualName: name,
+      individualDescription: text,
+    };
+    dispatch(add(data));
+    history.push(url);
+  };
+
+    useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+
   return (
     <div className='about_container'>
+
       <div className='about_description'>
         <h1>About Affordable Insurance of Texas</h1>
         <p>
@@ -29,14 +51,26 @@ function About() {
           depend on the experts at Affordable Insurance of Texas!
         </p>
       </div>
-      <div>
+      <div className='about_quotes'>
         <h3>We Offer Quotes By:</h3>
         <div>Phone</div>
         <div>Email</div>
         <div>Fax</div>
         <div className='about_bios'>
-          {about.map((val) => (
-            <h2>{val}</h2>
+          {about.map((val, id) => (
+           <div 
+              className="about_individuals"
+              onClick={() =>
+              clickHandler(`${match.url}/${id}`, val)
+            }>
+           
+           <h2>{val}</h2>
+           
+
+
+           </div>
+            
+
           ))}
         </div>
       </div>
