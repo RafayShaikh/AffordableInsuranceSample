@@ -18,7 +18,8 @@
 .services_offered {
   margin-top: 15px;
   margin-bottom: 15px;
-  padding: 5px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
 .services_description > p {
@@ -58,6 +59,7 @@
   border-radius: 10px;
   cursor: pointer;
   transform: scale(1.2);
+  box-shadow: 0 0 5px 1px var(--secondary);
 }
 
 .services_description {
