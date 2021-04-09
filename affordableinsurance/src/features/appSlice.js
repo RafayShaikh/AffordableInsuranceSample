@@ -6,6 +6,7 @@ export const appSlice = createSlice({
     insuranceLogo: null,
     insuranceName: null,
     insuranceDescription: null,
+    email: null,
     individualName: null,
     individualDescription: null,
     individualPic: null,
@@ -19,13 +20,16 @@ export const appSlice = createSlice({
       state.individualDescription = action.payload.individualDescription;
       state.individualPic = action.payload.individualPic;
     },
-    remove: (state) => {
-      state = null;
+    addUser: (state, action) => {
+      state.email = action.payload.email;
+    },
+    removeUser: (state) => {
+      state.userName = null;
     },
   },
 });
 
-export const { add, remove } = appSlice.actions;
+export const { add, addUser, removeUser } = appSlice.actions;
 export const selectAppData = (state) => state.app;
 
 export default appSlice.reducer;

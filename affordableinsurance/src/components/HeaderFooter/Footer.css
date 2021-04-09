@@ -27,12 +27,18 @@
   display: flex;
   font-size: medium;
 }
+.footer_grid > h4 {
+  background-color: var(--background-primary);
+  padding: 5px;
+  text-align: center;
+  border-radius: 20px;
+}
 .footer_grid > p {
   font-size: small;
 }
 .footer_grid > img {
   object-fit: contain;
-  height: 30%;
+  width: 70%;
 }
 .footer_grid:hover {
   transform: scale(1.1);

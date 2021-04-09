@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'babel-polyfill';
-import { app } from './features/appSlice';
+import { app, selectAppData } from './features/appSlice';
 import './App.css';
 import Header from './components/HeaderFooter/Header';
 import Footer from './components/HeaderFooter/Footer';
@@ -14,9 +14,11 @@ import Products from './components/Products/Products';
 import Services from './components/Services/Services';
 import Service_Info from './components/Services/Service_Info';
 import Service_Form from './components/Services/Service_Form';
+import { useSelector } from 'react-redux';
 
 function App() {
   const [header, setHeader] = useState('header');
+  const dataSlice = useSelector(selectAppData);
 
   const listenScrollEvent = (event) => {
     if (window.scrollY < 73) {
@@ -37,6 +39,7 @@ function App() {
       <div className='App'>
         <Header header={header} />
         <div className='Body'>
+          {dataSlice?.email && <h1>Admin Privileges Activated.</h1>}
           <Switch>
             <Route path='/admin' exact component={Admin} />
             <Route path='/about' exact component={About} />

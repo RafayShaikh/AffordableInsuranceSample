@@ -11,6 +11,18 @@
 .Body {
   padding-top: 25vh;
 }
+.Body > h1 {
+  color: var(--primary);
+  text-align: center;
+  padding: 10px;
+  background-color: whitesmoke;
+  margin-bottom: 3%;
+  margin-top: 1%;
+  margin-left: 10%;
+  margin-right: 10%;
+  box-shadow: 0 0 10px 1px gray;
+  border-radius: 20px;
+}
 *::-webkit-scrollbar {
   width: 5px;
 }
