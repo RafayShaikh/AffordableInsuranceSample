@@ -5,7 +5,6 @@ import { selectAppData } from '../../features/appSlice';
 import { useSelector } from 'react-redux';
 import Typist from 'react-typist';
 
-
 function Aboutbios({ match }) {
   const dataSlice = useSelector(selectAppData);
   const history = useHistory();
@@ -17,7 +16,6 @@ function Aboutbios({ match }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
     setData(dataSlice);
     if (dataSlice?.individualName == null || dataSlice?.individualPic == null) {
       history.push('/about');
@@ -27,8 +25,8 @@ function Aboutbios({ match }) {
   return (
     <div className='about_bioContainer'>
       <div className='about_bioHead'>
-       <img src={data?.individualPic} alt=""/>
-        <h2>{data?.individualName }</h2>
+        {data?.individualPic}
+        <h2>{data?.individualName}</h2>
       </div>
       <div className='about_bioDescription'>
         <article>
@@ -47,13 +45,9 @@ function Aboutbios({ match }) {
           pellentesque nec. Magna fermentum iaculis eu non diam phasellus
           vestibulum lorem. Facilisi nullam vehicula ipsum a.'
         </article>
-
       </div>
     </div>
   );
 }
 
-
 export default Aboutbios;
-
-

@@ -2,6 +2,7 @@
   margin-top: 10%;
   margin-bottom: 10%;
   animation: loading 1s linear;
+  border-top: 1px solid var(--secondary);
 }
 .about_bioHead {
   display: flex;
@@ -10,11 +11,13 @@
   flex-direction: column;
   color: var(--primary);
   margin-bottom: 5%;
-  border-bottom: 1px solid var(--primary);
   font-size: larger;
 }
+
 .about_bioHead > img {
-  animation: loading2 0.8s linear;
+  transform: translateY(-100%);
+  animation: loading2 0.8s forwards linear;
+  animation-delay: 0.2s;
 }
 
 .about_bioDescription {

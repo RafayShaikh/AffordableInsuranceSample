@@ -41,7 +41,7 @@ function App() {
         <div className='Body'>
           {dataSlice?.email && <h1>Admin Privileges Activated.</h1>}
           <Switch>
-            <Route path='/admin' exact component={Admin} />
+            <Route path='/admin' component={Admin} />
             <Route path='/about' exact component={About} />
             <Route path='/about/:id' exact component={Aboutbios} />
             <Route path='/products' exact component={Products} />
@@ -50,7 +50,6 @@ function App() {
             <Route path='/services/:id/form' exact component={Service_Form} />
             <Route path='/contacts' exact component={Contacts} />
             <Route path='/' exact component={Home} />
-            
           </Switch>
         </div>
         <Footer />
@@ -60,5 +59,3 @@ function App() {
 }
 
 export default App;
-
-
