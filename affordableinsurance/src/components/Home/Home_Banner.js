@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { db } from '../../firebase';
+import { auth, db } from '../../firebase';
 import './Home_Banner.css';
 
 function Home_Banner() {

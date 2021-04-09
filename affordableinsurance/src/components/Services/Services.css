@@ -49,7 +49,7 @@
 }
 .services_offeredBox > .MuiSvgIcon-root {
   zoom: 4;
-  border-bottom: 0.5px solid var(--secondary);
+  border-bottom: 1px solid var(--secondary);
   animation: loading 0.8s linear;
 }
 .services_offeredBox:hover {

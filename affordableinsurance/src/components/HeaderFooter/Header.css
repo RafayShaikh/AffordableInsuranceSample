@@ -85,7 +85,7 @@
   transition: transform 0.2s;
 }
 .header_logo2:hover {
-  transform: scale(1.05);
+  cursor: pointer;
 }
 .header_logo2 > img {
   padding-left: 10px;

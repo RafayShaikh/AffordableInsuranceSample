@@ -1,7 +1,9 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import './Footer.css';
 
 function Footer() {
+  const history = useHistory();
   return (
     <div className='footer_container'>
       <div
@@ -35,6 +37,7 @@ function Footer() {
           src='http://www.affordableinsoftx.com/wp-content/uploads/2019/07/aiof-creditcards-1.png'
           alt=''
         />
+        <h4 onClick={() => history.push('./admin')}>Admin Login</h4>
       </div>
     </div>
   );
