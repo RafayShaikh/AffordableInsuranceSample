@@ -8,6 +8,7 @@ export const appSlice = createSlice({
     insuranceDescription: null,
     individualName: null,
     individualDescription: null,
+    individualPic: null,
   },
   reducers: {
     add: (state, action) => {
@@ -16,6 +17,7 @@ export const appSlice = createSlice({
       state.insuranceDescription = action.payload.insuranceDescription;
       state.individualName = action.payload.individualName;
       state.individualDescription = action.payload.individualDescription;
+      state.individualPic = action.payload.individualPic;
     },
     remove: (state) => {
       state = null;

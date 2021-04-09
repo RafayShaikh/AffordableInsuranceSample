@@ -4,18 +4,17 @@ import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { add, appSlice, remove } from '../../features/appSlice';
 import Typist from 'react-typist';
-
-
-
+import pic from './employeepics/Dan.png'
 
 function About({ match }) {
   const [about, setAbout] = useState([
-    'Lauro Cuellar',
-    'Arthur V. Garza',
-    'Robert Valdez III',
-    'Jeremy Dominguez',
-    'Pris Ortiz',
-    'Javier De La Cerda',
+    [pic,'Lauro Cuellar'],
+    [pic,'Arthur V. Garza'],
+    [pic,'Robert Valdez III'],
+    [pic,'Jeremy Dominguez'],
+    [pic,'Pris Ortiz'],
+    [pic,'Javier De La Cerda'],
+    [pic,'Daniel Freaking Legend']
   ]);
 
 
@@ -23,10 +22,14 @@ function About({ match }) {
   const dispatch = useDispatch();
 
 
-  const clickHandler = (url, name, text) => {
+  const clickHandler = (url, name, pic, text) => {
+
+    
     const data = {
       individualName: name,
       individualDescription: text,
+      individualPic: pic,
+
     };
     dispatch(add(data));
     history.push(url);
@@ -55,7 +58,7 @@ function About({ match }) {
       </div>
       <div className='about_quotes'>
          <Typist avgTypingDelay={50} cursor={{ show: false }}>
-        <h2>Get To Know Us Today</h2>
+        <h2>Get To Know Us Today!</h2>
         </Typist>
 
         <div className='about_bios'>
@@ -63,10 +66,10 @@ function About({ match }) {
            <div 
               className="about_individuals"
               onClick={() =>
-              clickHandler(`${match.url}/${id}`, val)
+              clickHandler(`${match.url}/${id}`, val[1], val[0])
             }>
-           
-           <h2>{val}</h2>
+           <img src={val[0]} alt=""/>
+           <h2>{val[1]}</h2>
            
 
 

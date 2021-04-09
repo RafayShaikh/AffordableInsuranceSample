@@ -22,13 +22,25 @@
 .about_individuals {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
   margin: 2%;
   height: 200px;
   width: 200px;
   text-align: center;
   transition: transform 0.5s;
+}
+
+.about_individuals > img {
+  height: 100px;
+  object-fit: contain;
+  display: flex;
+  border-bottom: 2px solid var(--secondary);
+
+  padding-bottom: 5px;
+  image-rendering: pixelated;
+  opacity: 0;
+  animation: loading3 1s linear forwards;
+  animation-delay: 0.8s;
 }
 
 .about_description {
