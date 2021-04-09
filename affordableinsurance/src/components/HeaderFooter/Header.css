@@ -2,7 +2,7 @@
   transition: 1s;
 }
 .header_container {
-  background-image: linear-gradient(black, rgb(36, 33, 33), rgb(54, 40, 40));
+  background-color: black;
   height: 20vh;
   width: 100%;
   z-index: 20;

@@ -37,15 +37,17 @@ function Services({ match }) {
     [DirectionsBoat, 'Boats'],
     [Waves, 'Flood'],
     [SupervisorAccount, 'Workers’ Comp'],
-    [Store, 'Commercial Insurance'],
+    [Store, 'Commercial Property'],
     [BusinessCenter, 'Commercial Liability'],
     [AttachMoney, 'Renter’s policies'],
     [LocalDrink, 'Liquor Liability'],
     [BeachAccess, 'Mexico Insurance'],
     [VerifiedUser, 'SR22s'],
   ]);
+
   const history = useHistory();
   const dispatch = useDispatch();
+
   const clickHandler = (url, logo, name, text) => {
     const data = {
       insuranceLogo: <SvgIcon component={logo} />,
@@ -55,15 +57,18 @@ function Services({ match }) {
     dispatch(add(data));
     history.push(url);
   };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className='services_container'>
       <div className='services_description'>
         <h2>
-          Full-Serivce Insurance Agency Serving Corpus Christi and Nearby Areas
+          Full-Serivce Insurance Agency Serving Texas
         </h2>
+        <h3>Whatever you can buy we can insure</h3>
         <p>
           If experience and service are important to you, you owe it to yourself
           to turn to Affordable Insurance of Texas for all your insurance needs.

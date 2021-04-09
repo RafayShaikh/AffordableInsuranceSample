@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import Admin from './components/Admin/Admin';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import About from './components/About/About';
+import Aboutbios from './components/About/Aboutbios';
 import Contacts from './components/Contacts/Contacts';
 import Products from './components/Products/Products';
 import Services from './components/Services/Services';
@@ -42,12 +43,14 @@ function App() {
           <Switch>
             <Route path='/admin' exact component={Admin} />
             <Route path='/about' exact component={About} />
+            <Route path='/about/:id' exact component={Aboutbios} />
             <Route path='/products' exact component={Products} />
             <Route path='/services' exact component={Services} />
-            <Route path='/contacts' exact component={Contacts} />
-            <Route path='/' exact component={Home} />
             <Route path='/services/:id' exact component={Service_Info} />
             <Route path='/services/:id/form' exact component={Service_Form} />
+            <Route path='/contacts' exact component={Contacts} />
+            <Route path='/' exact component={Home} />
+            
           </Switch>
         </div>
         <Footer />
@@ -57,3 +60,5 @@ function App() {
 }
 
 export default App;
+
+

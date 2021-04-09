@@ -1,0 +1,211 @@
+.contacts_body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.contacts_description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: var(--primary);
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.contacts_description > p {
+  color: rgb(70, 69, 69);
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.contacts_container {
+  width: 70%;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  background: whitesmoke;
+  box-shadow: 0 0 5px 1px;
+}
+.contacts_companyInfo {
+  background-color: var(--primary);
+  border-radius: 16px;
+  flex: 0 1 35%;
+  padding: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.contacts_companyInfo > h4 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  display: flex;
+  margin: 0;
+}
+.contacts_companyInfo > p {
+  font-size: 1.4rem;
+  display: flex;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+.icon_text {
+  display: flex;
+  padding: 2% 0 2% 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+.icon_text > .MuiSvgIcon-root {
+  flex: 0 0 40px;
+  display: flex;
+  font-size: 2rem;
+  margin-right: 2rem;
+  color: white;
+}
+.icon_text > span {
+  font-size: 1.25rem;
+  display: flex;
+  font-weight: 300;
+}
+.online_media {
+  display: flex;
+  padding-top: 15%;
+  width: 40%;
+  justify-content: space-between;
+}
+.online_media > .icon_shape {
+  flex: 0 1 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 50%;
+  transition: 0.5s all ease-in-out;
+  background: #b1161b;
+}
+.online_media > .icon_shape:hover {
+  background: var(--secondary);
+}
+.icon_shape > .MuiSvgIcon-root {
+  color: white;
+  display: flex;
+  font-size: 2rem;
+}
+.contacts_FormContainer {
+  display: flex;
+  flex: 0 1 65%;
+}
+form {
+  padding: 40px;
+  width: 100%;
+}
+.col2 {
+  display: flex;
+}
+.form_group {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 0 1 100%;
+  padding-right: 30px;
+}
+.form_group > label {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+.form_group > input[type='text'],
+input[type='phone'],
+input[type='email'] {
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid var(--primary);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 0.9rem;
+  font-weight: 200;
+  transition: 0.3s all ease-in-out;
+  margin-bottom: 1.8rem;
+}
+.form_group > input[type='text']:focus,
+input[type='phone']:focus,
+input[type='email']:focus,
+textarea:focus {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid lightskyblue;
+}
+.form_group > textarea {
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid var(--primary);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 1.15rem;
+  font-weight: 250;
+  transition: 0.8s all ease-in-out;
+  margin-bottom: 1.8rem;
+}
+
+.form_group:nth-child(2) {
+  padding-right: 0;
+}
+.form_group.solo {
+  padding: 0;
+}
+.radio_buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+.radio_button {
+  margin-right: 15px;
+}
+.radio_button > label {
+  padding-left: 5px;
+  font-size: 1rem;
+}
+.form_group.submit {
+  align-items: flex-end;
+}
+
+.form_group > button {
+  display: flex;
+  cursor: pointer;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bolder;
+  transition: all 0.3s;
+  justify-content: center;
+  align-items: center;
+}
+.form_group > button:hover {
+  background-color: var(--background-primary);
+  color: var(--secondary);
+  border-radius: 10px;
+  transform: scale(1.08);
+}
+@media screen and (max-width: 700px) {
+  .contacts_container {
+    flex-direction: column;
+  }
+  .online_media {
+    width: 40%;
+  }
+  .contacts_FormContainer {
+    height: 40%;
+  }
+}
