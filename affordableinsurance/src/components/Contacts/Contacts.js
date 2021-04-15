@@ -9,6 +9,15 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import { withRouter } from 'react-router';
 
 function Contacts() {
+  const [Fname, setFname] = useState('');
+  const [Lname, setLname] = useState('');
+  const [Email, setEmail] = useState('');
+  const [PhoneNum, setPhoneNum] = useState('');
+  const [message, setMessage] = useState('');
+
+  const [QuickQuest, setQuickQuest] = useState(true);
+  const [GetQuote, setGetQuote] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -57,21 +66,37 @@ function Contacts() {
             <div className='col2'>
               <div className='form_group'>
                 <label>First Name</label>
-                <input type='text' />
+                <input
+                  type='text'
+                  value={Fname}
+                  onChange={(e) => setFname(e.target.value)}
+                />
               </div>
               <div className='form_group'>
                 <label>Last Name</label>
-                <input type='text' />
+                <input
+                  type='text'
+                  value={Lname}
+                  onChange={(e) => setLname(e.target.value)}
+                />
               </div>
             </div>
             <div className='col2'>
               <div className='form_group'>
                 <label>Email</label>
-                <input type='email' />
+                <input
+                  type='email'
+                  value={Email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
               <div className='form_group'>
                 <label>Phone #</label>
-                <input type='phone' />
+                <input
+                  type='phone'
+                  value={PhoneNum}
+                  onChange={(e) => setPhoneNum(e.target.value)}
+                />
               </div>
             </div>
             <div className='col2'>
@@ -83,7 +108,9 @@ function Contacts() {
                       type='radio'
                       name='type'
                       id='radioQuestion'
-                      value='QuickQuest'
+                      value={QuickQuest}
+                      checked={QuickQuest}
+                      onChange={(e) => setQuickQuest(true) & setGetQuote(false)}
                     />
                     <label for='radioQuestion'>Quick Question</label>
                   </div>
@@ -92,7 +119,9 @@ function Contacts() {
                       type='radio'
                       name='type'
                       id='radioQuote'
-                      value='GetQuote'
+                      value={GetQuote}
+                      checked={GetQuote}
+                      onChange={(e) => setGetQuote(true) & setQuickQuest(false)}
                     />
                     <label for='radioQuote'>Get A Quote</label>
                   </div>
@@ -102,7 +131,11 @@ function Contacts() {
             <div className='col2'>
               <div className='form_group solo'>
                 <label>Message</label>
-                <textarea placeholder='Write you message here'></textarea>
+                <textarea
+                  placeholder='Write you message here'
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                ></textarea>
               </div>
             </div>
             <div className='col2'>

@@ -1,5 +1,5 @@
 .contacts_body {
-  padding: 10px;
+  padding: 10px 10px 50px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,6 +29,7 @@
   border-radius: 16px;
   overflow: hidden;
   padding: 8px;
+  margin-top: 15px;
   display: flex;
   flex-direction: row;
   background: whitesmoke;
@@ -78,7 +79,7 @@
 .online_media {
   display: flex;
   padding-top: 15%;
-  width: 40%;
+  width: 115px;
   justify-content: space-between;
 }
 .online_media > .icon_shape {
@@ -168,11 +169,13 @@ textarea:focus {
   margin-bottom: 2rem;
 }
 .radio_button {
+  cursor: pointer;
   margin-right: 15px;
 }
 .radio_button > label {
   padding-left: 5px;
   font-size: 1rem;
+  cursor: pointer;
 }
 .form_group.submit {
   align-items: flex-end;
