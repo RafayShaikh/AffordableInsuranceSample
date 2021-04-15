@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectAppData } from '../../features/appSlice';
 import { auth, db } from '../../firebase';
 import './Home_Banner.css';
 
 function Home_Banner() {
   const [text, setText] = useState([]);
+  const [edit, setEdit] = useState(false);
+  const [newText, setNewText] = useState(null);
+  const dataSlice = useSelector(selectAppData);
 
   const fetchText = async () => {
     const snapshot = await db.collection('banner').doc('banner_text').get();
@@ -11,10 +16,39 @@ function Home_Banner() {
     if (!data.exists) {
       setText(data.text);
     } else {
-      setText('Welcome 2');
+      setText('Welcome');
     }
   };
+  const updateText = async () => {
+    await db
+      .collection('banner')
+      .doc('banner_text')
+      .set({
+        text: newText,
+      })
+      .then(() => {
+        alert('Banner Updated');
+        setText(newText);
+      })
+      .catch((error) => {
+        alert('Something Went Wrong');
+      });
+  };
 
+  const editText = (e) => {
+    e.preventDefault();
+    setEdit(true);
+  };
+  const saveText = (e) => {
+    e.preventDefault();
+    if (newText != null) {
+      updateText();
+    }
+    setNewText(null);
+  };
+  const handleChange = (e) => {
+    setNewText(e.target.value);
+  };
   useEffect(() => {
     fetchText();
   }, []);
@@ -22,6 +56,21 @@ function Home_Banner() {
   return (
     <div className='home_bannerContainer'>
       <h4>{text}</h4>
+      {dataSlice?.email && (
+        <div className='home_bannerEdit'>
+          <button onClick={editText}>Edit</button>
+          {edit === true && (
+            <div className='home_textEdit'>
+              <textarea
+                placeholder='Write you message here'
+                value={newText}
+                onChange={handleChange}
+              ></textarea>
+              <button onClick={saveText}>Save</button>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
