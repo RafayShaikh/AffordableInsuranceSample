@@ -24,7 +24,7 @@ export const appSlice = createSlice({
       state.email = action.payload.email;
     },
     removeUser: (state) => {
-      state.userName = null;
+      state.email = null;
     },
   },
 });

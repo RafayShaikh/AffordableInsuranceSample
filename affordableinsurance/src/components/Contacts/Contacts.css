@@ -148,7 +148,7 @@ textarea:focus {
   border: none;
   background: transparent;
   border-bottom: 2px solid var(--primary);
-  cursor: pointer;
+  cursor: text;
   border-radius: 4px;
   padding: 12px;
   font-size: 1.15rem;

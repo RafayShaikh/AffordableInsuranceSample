@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   text-align: center;
   color: white;
   padding-top: 10px;
@@ -15,7 +16,41 @@
     var(--primary) 100%
   );
   border-radius: 100px;
-  animation: flashing 1.5s infinite ease-in-out;
+  animation: flashing 1.5s infinite linear;
+  animation-delay: 5.5s;
+}
+
+.home_bannerEdit,
+.home_textEdit {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2px;
+  padding-top: 5px;
+}
+.home_bannerEdit > button,
+.home_textEdit > button {
+  display: flex;
+  cursor: pointer;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--secondary);
+  color: white;
+  font-weight: bolder;
+  transition: all 0.3s;
+  justify-content: center;
+  align-items: center;
+}
+.home_textEdit > textarea {
+  border: none;
+  background: whitesmoke;
+  cursor: text;
+  border-radius: 4px;
+  font-size: 1.15rem;
+  font-weight: 250;
+  transition: 0.8s all ease-in-out;
 }
 
 @keyframes flashing {
