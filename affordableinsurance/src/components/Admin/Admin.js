@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Admin.css';
-import { auth, provider } from '../../firebase';
+import { auth, db, provider } from '../../firebase';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import { addUser } from '../../features/appSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,25 +13,29 @@ function Admin() {
   const [error, setError] = useState(false);
   const dataSlice = useSelector(selectAppData);
   const history = useHistory();
+  var email;
 
-  /*const fetchEmail = async () => {
-    const snapshot = await db.collection('banner').doc('banner_text').get();
-    const data = snapshot.data();
-    if (!data.exists) {
-      setText(data.text);
-    } else {
-      setText('Welcome 2');
-    }
-  };*/
-
+  const fetchEmail = async () => {
+    await db
+      .collection('user')
+      .get()
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          email = doc.id;
+        });
+      });
+  };
   async function signIn(e) {
     e.preventDefault();
+    fetchEmail();
     await auth
       .signInWithPopup(provider)
       .then((result) => {
+        if (result.user.email != email) signOut(e);
         const data = {
           email: result.user.email,
         };
+
         dispatch(addUser(data));
       })
       .catch((error) => {
@@ -56,6 +60,7 @@ function Admin() {
   }
   useEffect(() => {
     setUser(dataSlice?.email);
+    window.scrollTo(0, 0);
   }, []);
 
   return (
