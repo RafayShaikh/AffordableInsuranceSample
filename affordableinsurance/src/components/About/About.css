@@ -15,7 +15,7 @@
   background-color: var(--background-primary);
   border-radius: 10px;
   cursor: pointer;
-  transform: scale(1.2);
+  transform: scale(1.08);
   box-shadow: 0 0 5px 1px var(--secondary);
 }
 
@@ -24,20 +24,18 @@
   justify-content: center;
   flex-direction: column;
   margin: 2%;
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   text-align: center;
   transition: transform 0.5s;
 }
 
 .about_individuals > img {
-  height: 100px;
+  height: 200px;
   object-fit: contain;
   display: flex;
   border-bottom: 2px solid var(--secondary);
-
   padding-bottom: 5px;
-  image-rendering: pixelated;
   opacity: 0;
   animation: loading3 1s linear forwards;
   animation-delay: 0.8s;

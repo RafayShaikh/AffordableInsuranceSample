@@ -5,15 +5,18 @@ import { useDispatch } from 'react-redux';
 import { add, appSlice, remove } from '../../features/appSlice';
 import Typist from 'react-typist';
 import pic from './employeepics/Dan.png';
+import pic1 from './employeepics/1.JPG';
+import pic2 from './employeepics/2.JPG';
+import pic3 from './employeepics/3.JPG';
 
 function About({ match }) {
   const [about, setAbout] = useState([
-    [pic, 'Lauro Cuellar'],
-    [pic, 'Arthur V. Garza'],
+    [pic1, 'Lauro Cuellar'],
+    [pic2, 'Arthur V. Garza'],
     [pic, 'Robert Valdez III'],
     [pic, 'Jeremy Dominguez'],
     [pic, 'Pris Ortiz'],
-    [pic, 'Javier De La Cerda'],
+    [pic3, 'Javier De La Cerda'],
     [pic, 'Daniel Freaking Legend'],
   ]);
 
