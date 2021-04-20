@@ -18,7 +18,7 @@ function Service_Info({ match }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     setData(dataSlice);
     if (dataSlice?.insuranceLogo == null || dataSlice?.insuranceName == null) {
       history.push('/services');
@@ -29,7 +29,7 @@ function Service_Info({ match }) {
     <div className='service_infoContainer'>
       <div className='service_infoHead'>
         {data?.insuranceLogo}
-        <h2>{data?.insuranceName + ' Insurance'}</h2>
+        <h2>{data?.insuranceName} Insurance</h2>
       </div>
       <div className='service_infoDescription'>
         <p>
