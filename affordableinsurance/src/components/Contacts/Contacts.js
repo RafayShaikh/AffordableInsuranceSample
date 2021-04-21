@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Contacts.css';
-import PhoneIcon from '@material-ui/icons/Phone';
-import MailIcon from '@material-ui/icons/Mail';
-import RoomIcon from '@material-ui/icons/Room';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+
+import { Phone, Mail, Room, Facebook, LocalParking } from '@material-ui/icons';
 
 import { withRouter } from 'react-router';
 
@@ -14,9 +13,27 @@ function Contacts() {
   const [Email, setEmail] = useState('');
   const [PhoneNum, setPhoneNum] = useState('');
   const [message, setMessage] = useState('');
-
   const [QuickQuest, setQuickQuest] = useState(true);
   const [GetQuote, setGetQuote] = useState(false);
+
+  const services = [
+    { service: 'Auto/Trucks' },
+    { service: 'Bonds' },
+    { service: 'Windstorm' },
+    { service: 'Builders Risk' },
+    { service: 'Motorcycle' },
+    { service: 'Recreational Vehicles' },
+    { service: 'Mobile Homes' },
+    { service: 'Boats' },
+    { service: 'Flood' },
+    { service: 'Workers’ Comp' },
+    { service: 'Commercial Property' },
+    { service: 'Commercial Liability' },
+    { service: 'Renter’s policies' },
+    { service: 'Liquor Liability' },
+    { service: 'Mexico Insurance' },
+    { service: 'SR22s' },
+  ];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,32 +49,43 @@ function Contacts() {
           have years of experience finding the best rates on the best coverage
           around! To learn more about any of our programs or about the several
           companies that we represent, please give us a call today! Our friendly
-          and helpful staff is ready to assist you with your inquiries. (From
-          Original Site)
+          and helpful staff is ready to assist you with your inquiries.
         </p>
       </div>
       <div className='contacts_container'>
         <div className='contacts_companyInfo'>
           <h4>Contact Us</h4>
-          <p>Text will be here shortly after I create everything!</p>
+          <p>
+            We are happy to answer any questions you might have regarding
+            insurance you are looking for. Please fill out the form and we'll be
+            in touch as soon as possible. {QuickQuest + ' ' + GetQuote}
+          </p>
           <div className='icon_text'>
-            <PhoneIcon />
-            <span>361-447-8569</span>
+            <Phone />
+            <span>361-854-0207</span>
           </div>
           <div className='icon_text'>
-            <MailIcon />
-            <span>Jbilly23@gmail.com</span>
+            <Mail />
+            <span>affordableinsoftx@yahoo.com</span>
           </div>
           <div className='icon_text'>
-            <RoomIcon />
-            <span>1917 gayle drive, Corpus Christi, Tx 78418</span>
+            <Room />
+            <span>5133 Kostoryz Rd Suite B, Corpus Christi, TX 78415</span>
           </div>
           <div className='online_media'>
-            <a href='#' className='icon_shape'>
-              <FacebookIcon />
+            <a
+              href='https://www.facebook.com/Affordableinsoftexas'
+              target='_blank'
+              className='icon_shape'
+            >
+              <Facebook />
             </a>
-            <a href='#' className='icon_shape'>
-              <TwitterIcon />
+            <a
+              href='https://www.progressive.com/agent/local-agent/texas/corpus-christi/affordable-insurance-of-texas-78415/'
+              target='_blank'
+              className='icon_shape'
+            >
+              <LocalParking />
             </a>
           </div>
         </div>
@@ -128,6 +156,15 @@ function Contacts() {
                 </div>
               </div>
             </div>
+            <Autocomplete
+              id='combo-box-1'
+              options={services}
+              getOptionLabel={(option) => option.title}
+              style={{ width: 200 }}
+              renderInput={(params) => (
+                <TextField {...params} label='Combo box' variant='outlined' />
+              )}
+            />
             <div className='col2'>
               <div className='form_group solo'>
                 <label>Message</label>
