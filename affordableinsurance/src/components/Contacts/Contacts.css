@@ -184,10 +184,19 @@ textarea:focus {
   font-size: 1.1rem;
   cursor: pointer;
 }
+.combo_container {
+  display: flex;
+  justify-content: flex-start;
+}
+.combo_container > .MuiAutocomplete-root {
+  margin: 0 40px 0 40px;
+  width: 400px;
+  margin-bottom: 2rem;
+}
+
 .form_group.submit {
   align-items: flex-end;
 }
-
 .form_group > button {
   display: flex;
   cursor: pointer;

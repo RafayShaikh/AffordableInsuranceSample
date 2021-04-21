@@ -35,6 +35,18 @@ function Contacts() {
     { service: 'SR22s' },
   ];
 
+  const budgets = [
+    { budget: '$500' },
+    { budget: '$1,000' },
+    { budget: '$2,500' },
+    { budget: '$5,000' },
+    { budget: '$7,500' },
+    { budget: '$10,000' },
+    { budget: '$50,000' },
+    { budget: '$100,000' },
+    { budget: '$1,000,000' },
+  ];
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -58,7 +70,7 @@ function Contacts() {
           <p>
             We are happy to answer any questions you might have regarding
             insurance you are looking for. Please fill out the form and we'll be
-            in touch as soon as possible. {QuickQuest + ' ' + GetQuote}
+            in touch as soon as possible.
           </p>
           <div className='icon_text'>
             <Phone />
@@ -156,15 +168,40 @@ function Contacts() {
                 </div>
               </div>
             </div>
-            <Autocomplete
-              id='combo-box-1'
-              options={services}
-              getOptionLabel={(option) => option.title}
-              style={{ width: 200 }}
-              renderInput={(params) => (
-                <TextField {...params} label='Combo box' variant='outlined' />
-              )}
-            />
+            <div className='col2'>
+              <div className='form_group'>
+                <div className='combo_container'>
+                  {GetQuote ? (
+                    <Autocomplete
+                      className='combo-box'
+                      options={services}
+                      getOptionLabel={(option) => option.service}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          label='Services'
+                          variant='outlined'
+                        />
+                      )}
+                    />
+                  ) : null}
+                  {GetQuote ? (
+                    <Autocomplete
+                      className='combo-box'
+                      options={budgets}
+                      getOptionLabel={(option) => option.budget}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          label='Budget'
+                          variant='outlined'
+                        />
+                      )}
+                    />
+                  ) : null}
+                </div>
+              </div>
+            </div>
             <div className='col2'>
               <div className='form_group solo'>
                 <label>Message</label>
