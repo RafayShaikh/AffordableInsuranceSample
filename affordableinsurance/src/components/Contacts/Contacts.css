@@ -15,6 +15,7 @@
   color: var(--primary);
   margin-left: 10%;
   margin-right: 10%;
+  animation: loading ease-in 0.5s;
 }
 
 .contacts_description > p {
@@ -34,6 +35,8 @@
   flex-direction: row;
   background: whitesmoke;
   box-shadow: 0 0 5px 1px;
+  opacity: 0;
+  animation: loading2 0.5s ease-in forwards 0.5s;
 }
 .contacts_companyInfo {
   background-color: var(--primary);

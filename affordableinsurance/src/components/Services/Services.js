@@ -5,7 +5,7 @@ import {
   Assignment,
   Cloud,
   Business,
-  Motorcycle,
+  TwoWheeler,
   RvHookup,
   LocalShipping,
   DirectionsBoat,
@@ -17,6 +17,7 @@ import {
   AttachMoney,
   LocalDrink,
   VerifiedUser,
+  EventAvailable,
 } from '@material-ui/icons';
 import { SvgIcon } from '@material-ui/core';
 import Typist from 'react-typist';
@@ -28,21 +29,22 @@ import { useEffect } from 'react';
 function Services({ match }) {
   const [services, setServices] = useState([
     [DriveEta, 'Auto/Trucks'],
-    [Assignment, 'Bonds'],
-    [Cloud, 'Windstorm'],
     [Business, 'Builders Risk'],
-    [Motorcycle, 'Motorcycle'],
-    [RvHookup, 'Recreational Vehicles'],
-    [LocalShipping, 'Mobile Homes'],
+    [Assignment, 'Bonds'],
     [DirectionsBoat, 'Boats'],
-    [Waves, 'Flood'],
-    [SupervisorAccount, 'Workers’ Comp'],
-    [Store, 'Commercial Property'],
+    [LocalShipping, 'Comercial Auto/Cargo'],
     [BusinessCenter, 'Commercial Liability'],
-    [AttachMoney, 'Renter’s policies'],
+    [Store, 'Commercial Property'],
+    [Waves, 'Flood'],
     [LocalDrink, 'Liquor Liability'],
+    [TwoWheeler, 'Motorcycle'],
     [BeachAccess, 'Mexico Insurance'],
+    [RvHookup, 'Recreational Vehicles'],
+    [AttachMoney, 'Renter’s policies'],
+    [EventAvailable, 'Special Events'],
     [VerifiedUser, 'SR22s'],
+    [Cloud, 'Windstorm'],
+    [SupervisorAccount, 'Workers’ Comp'],
   ]);
 
   const history = useHistory();
@@ -65,9 +67,7 @@ function Services({ match }) {
   return (
     <div className='services_container'>
       <div className='services_description'>
-        <h2>
-          Full-Serivce Insurance Agency Serving Texas
-        </h2>
+        <h2>Full-Serivce Insurance Agency Serving Texas</h2>
         <h3>Whatever you can buy we can insure</h3>
         <p>
           If experience and service are important to you, you owe it to yourself
