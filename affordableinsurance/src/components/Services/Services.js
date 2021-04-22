@@ -18,6 +18,7 @@ import {
   LocalDrink,
   VerifiedUser,
   EventAvailable,
+  AirportShuttle,
 } from '@material-ui/icons';
 import { SvgIcon } from '@material-ui/core';
 import Typist from 'react-typist';
@@ -39,8 +40,9 @@ function Services({ match }) {
     [LocalDrink, 'Liquor Liability'],
     [TwoWheeler, 'Motorcycle'],
     [BeachAccess, 'Mexico Insurance'],
-    [RvHookup, 'Recreational Vehicles'],
-    [AttachMoney, 'Renter’s policies'],
+    [RvHookup, 'Mobile Home'],
+    [AirportShuttle, 'Recreational Vehicles'],
+    [AttachMoney, 'Renter’s Policies'],
     [EventAvailable, 'Special Events'],
     [VerifiedUser, 'SR22s'],
     [Cloud, 'Windstorm'],

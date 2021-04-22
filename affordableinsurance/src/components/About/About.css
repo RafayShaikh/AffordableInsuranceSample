@@ -15,7 +15,7 @@
   background-color: var(--background-primary);
   border-radius: 10px;
   cursor: pointer;
-  transform: scale(1.08);
+  transform: scale(1.04);
   box-shadow: 0 0 5px 1px var(--secondary);
 }
 
@@ -29,7 +29,66 @@
   text-align: center;
   transition: transform 0.5s;
 }
-
+.about_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2%;
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.5s;
+  color: var(--secondary);
+  background-color: var(--background-primary);
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 5px 1px var(--secondary);
+}
+.about_form > input[type='text'],
+input[type='textarea'] {
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid var(--primary);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 0.9rem;
+  font-weight: 200;
+  transition: 0.3s all ease-in-out;
+  margin-bottom: 1.8rem;
+}
+.about_form > input[type='file'] {
+  border: 1px dotted var(--primary);
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.about_form > button,
+.about_admin > button {
+  display: flex;
+  cursor: pointer;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bolder;
+  transition: all 0.3s;
+  justify-content: center;
+  align-items: center;
+}
+.about_admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.about_form > button:hover,
+.about_admin > button:hover {
+  background-color: var(--background-primary);
+  color: var(--secondary);
+  border-radius: 10px;
+}
 .about_individuals > img {
   height: 200px;
   object-fit: contain;

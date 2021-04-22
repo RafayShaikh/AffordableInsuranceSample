@@ -26,12 +26,7 @@
   box-shadow: 0 0 10px 1px gray;
   border-radius: 20px;
 }
-.app_image {
-  object-fit: contain;
-  width: 60%;
-  margin-bottom: 5px;
-  box-shadow: 0px 5px 15px 0px black;
-}
+
 *::-webkit-scrollbar {
   width: 5px;
 }

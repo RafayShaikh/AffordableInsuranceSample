@@ -63,7 +63,7 @@
 .header_contact {
 }
 .header_container2 {
-  background-image: linear-gradient(black, rgb(36, 33, 33), rgb(54, 40, 40));
+  background-color: black;
   position: fixed;
   height: 8vh;
   width: 100%;
