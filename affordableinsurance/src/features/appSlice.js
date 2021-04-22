@@ -8,14 +8,14 @@ export const appSlice = createSlice({
     insuranceDescription: null,
     email: null,
     individualName: null,
-    individualDescription: null,
+    InsuranceDescription: null,
     individualPic: null,
   },
   reducers: {
     add: (state, action) => {
       state.insuranceLogo = action.payload.insuranceLogo;
       state.insuranceName = action.payload.insuranceName;
-      state.insuranceDescription = action.payload.insuranceDescription;
+      state.InsuranceDescription = action.payload.InsuranceDescription;
       state.individualName = action.payload.individualName;
       state.individualDescription = action.payload.individualDescription;
       state.individualPic = action.payload.individualPic;

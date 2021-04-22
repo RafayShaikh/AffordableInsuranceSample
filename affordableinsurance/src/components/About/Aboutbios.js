@@ -24,20 +24,15 @@ function Aboutbios({ match }) {
 
   return (
     <div className='about_bioContainer'>
-      <div className='about_bioHead'>
+      <div className='about_bioPic'>
         {data?.individualPic}
+      </div>
+      <div className='about_bioName'>
         <h2>{data?.individualName}</h2>
       </div>
       <div className='about_bioDescription'>
-        <article>
-          {data?.individualDescription}
-        </article>
+        <article>{data?.individualDescription}</article>
       </div>
-
-
-
-
-
 
     </div>
   );
