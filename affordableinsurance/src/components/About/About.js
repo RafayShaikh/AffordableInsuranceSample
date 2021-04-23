@@ -11,7 +11,7 @@ import pic3 from './employeepics/3.JPG';
 import { db, storage } from '../../firebase';
 
 function About({ match }) {
-  const [about, setAbout] = useState({]);
+  const [about, setAbout] = useState([]);
   const [fileUrl, setFileUrl] = useState(null);
   const dataSlice = useSelector(selectAppData);
   const history = useHistory();
