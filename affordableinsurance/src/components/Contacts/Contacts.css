@@ -1,5 +1,5 @@
 .contacts_body {
-  padding: 10px;
+  padding: 10px 10px 50px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,6 +30,7 @@
   border-radius: 16px;
   overflow: hidden;
   padding: 8px;
+  margin-top: 15px;
   display: flex;
   flex-direction: row;
   background: whitesmoke;
@@ -41,7 +42,7 @@
   background-color: var(--primary);
   border-radius: 16px;
   flex: 0 1 35%;
-  padding: 40px;
+  padding: 35px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -54,42 +55,42 @@
   margin: 0;
 }
 .contacts_companyInfo > p {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   display: flex;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 300;
-  margin-bottom: 2rem;
+  margin-bottom: 10%;
 }
 .icon_text {
   display: flex;
-  padding: 2% 0 2% 0;
+  padding: 3% 0 3% 0;
   justify-content: flex-start;
   align-items: center;
 }
 .icon_text > .MuiSvgIcon-root {
-  flex: 0 0 40px;
+  flex: 0 0 35px;
   display: flex;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-right: 2rem;
   color: white;
 }
 .icon_text > span {
   font-size: 1.25rem;
-  display: flex;
-  font-weight: 300;
+  word-wrap: break-word;
+  font-weight: 350;
 }
 .online_media {
   display: flex;
   padding-top: 15%;
-  width: 40%;
+  width: 115px;
   justify-content: space-between;
 }
 .online_media > .icon_shape {
-  flex: 0 1 40px;
+  flex: 0 1 45px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
+  height: 45px;
   border-radius: 50%;
   transition: 0.5s all ease-in-out;
   background: #b1161b;
@@ -100,7 +101,7 @@
 .icon_shape > .MuiSvgIcon-root {
   color: white;
   display: flex;
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 .contacts_FormContainer {
   display: flex;
@@ -120,8 +121,14 @@ form {
   flex: 0 1 100%;
   padding-right: 30px;
 }
+.form_group:nth-child(2) {
+  padding-right: 0;
+}
+.form_group.solo {
+  padding: 0;
+}
 .form_group > label {
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin-bottom: 0.8rem;
 }
 .form_group > input[type='text'],
@@ -133,10 +140,24 @@ input[type='email'] {
   cursor: pointer;
   border-radius: 4px;
   padding: 8px;
-  font-size: 0.9rem;
-  font-weight: 200;
+  font-size: 1.1rem;
+  font-weight: 300;
   transition: 0.3s all ease-in-out;
   margin-bottom: 1.8rem;
+}
+.form_group > textarea {
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid var(--primary);
+  cursor: pointer;
+  height: 120px;
+  border-radius: 4px;
+  margin-top: 4px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: 0.3s all ease-in-out;
+  margin-bottom: 1.5rem;
 }
 .form_group > input[type='text']:focus,
 input[type='phone']:focus,
@@ -145,25 +166,7 @@ textarea:focus {
   border: none;
   outline: none;
   border-bottom: 2px solid lightskyblue;
-}
-.form_group > textarea {
-  border: none;
-  background: transparent;
-  border-bottom: 2px solid var(--primary);
   cursor: text;
-  border-radius: 4px;
-  padding: 12px;
-  font-size: 1.15rem;
-  font-weight: 250;
-  transition: 0.8s all ease-in-out;
-  margin-bottom: 1.8rem;
-}
-
-.form_group:nth-child(2) {
-  padding-right: 0;
-}
-.form_group.solo {
-  padding: 0;
 }
 .radio_buttons {
   display: flex;
@@ -173,14 +176,27 @@ textarea:focus {
 .radio_button {
   margin-right: 15px;
 }
-.radio_button > label {
-  padding-left: 5px;
-  font-size: 1rem;
+.radio_button > input {
+  cursor: pointer;
 }
+.radio_button > label {
+  padding-left: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.combo_container {
+  display: flex;
+  justify-content: flex-start;
+}
+.combo_container > .MuiAutocomplete-root {
+  margin: 0 40px 0 40px;
+  width: 400px;
+  margin-bottom: 2rem;
+}
+
 .form_group.submit {
   align-items: flex-end;
 }
-
 .form_group > button {
   display: flex;
   cursor: pointer;
@@ -201,12 +217,12 @@ textarea:focus {
   border-radius: 10px;
   transform: scale(1.08);
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 995px) {
   .contacts_container {
     flex-direction: column;
   }
   .online_media {
-    width: 40%;
+    width: 22%;
   }
   .contacts_FormContainer {
     height: 40%;
