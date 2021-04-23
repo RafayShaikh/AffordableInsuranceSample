@@ -19,6 +19,7 @@ import {
   LocalDrink,
   VerifiedUser,
   EventAvailable,
+  AirportShuttle,
 } from '@material-ui/icons';
 import { SvgIcon } from '@material-ui/core';
 import Typist from 'react-typist';
@@ -29,6 +30,8 @@ import { useEffect } from 'react';
 
 function Services({ match }) {
   const [services, setServices] = useState([
+
+    [RvHookup, 'Mobile Home'],
     [DriveEta, 'Auto/Trucks','Everyday use personal vehicles to go to and from work and school. This would also include Classic cars, custom cars, etc.'],
     [Business, 'Builders Risk','Insurance during the time of construction of a new dwelling and/or commercial building. Also during renovations of such buildings. Commonly for the owner of the structure.'],
     [Assignment, 'Bonds','Loss Title Bonds, Surety Bonds and Performance Bonds.'],
@@ -41,7 +44,7 @@ function Services({ match }) {
     [LocalDrink, 'Liquor Liability','This policy is used as a complement to your general liability commonly used for restaurants and/or bars.'],
     [TwoWheeler, 'Motorcycle',''],
     [BeachAccess, 'Mexico Insurance','This policy is an extension of your current policy in the U.S. you can have full coverage in Mexico but you must have full coverage on your domestic policy.'],
-    [RvHookup, 'Recreational Vehicles','This includes motorcycles, boats, travel trailers, RV\'s, golf carts, motor homes, ATV\'s, jet ski\'s, trikes.'],
+    [AirportShuttle, 'Recreational Vehicles','This includes motorcycles, boats, travel trailers, RV\'s, golf carts, motor homes, ATV\'s, jet ski\'s, trikes.'],
     [AttachMoney, 'Renter’s policies','Covers content and personal property in a rented dwelling. Liability is included'],
     [EventAvailable, 'Special Events','Special event liability insurance covers short-term private events against bodily injury and property damage claims. Many venues require event organizers to carry liability insurance.  Help pay medical expenses if a guest is injured.  Protect venue property from damage, including the building and equipment.'],
     [VerifiedUser, 'SR22s','This policy is a state required liability insurance. Commonly needed for a certain length of time. This policy reports coverage to whatever state requiring this coverage.'],
