@@ -54,6 +54,13 @@ const useForm = (callback, validate) => {
       setErrors({});
     }
   };
+  const handleContact = (e) => {
+    setCounter(true);
+    let check =
+      Object.keys(errors).length - Object.keys(validate(values)).length;
+    console.log(Object.keys(errors).length);
+    console.log(Object.keys(validate(values)).length);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));

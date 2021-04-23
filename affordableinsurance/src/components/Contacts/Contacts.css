@@ -132,7 +132,7 @@ form {
   margin-bottom: 0.8rem;
 }
 .form_group > input[type='text'],
-input[type='phone'],
+input[type='number'],
 input[type='email'] {
   border: none;
   background: transparent;
@@ -145,6 +145,7 @@ input[type='email'] {
   transition: 0.3s all ease-in-out;
   margin-bottom: 1.8rem;
 }
+
 .form_group > textarea {
   border: none;
   background: transparent;
@@ -160,7 +161,7 @@ input[type='email'] {
   margin-bottom: 1.5rem;
 }
 .form_group > input[type='text']:focus,
-input[type='phone']:focus,
+input[type='number']:focus,
 input[type='email']:focus,
 textarea:focus {
   border: none;
@@ -171,7 +172,7 @@ textarea:focus {
 .radio_buttons {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .radio_button {
   margin-right: 15px;
@@ -186,12 +187,17 @@ textarea:focus {
 }
 .combo_container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
-.combo_container > .MuiAutocomplete-root {
-  margin: 0 40px 0 40px;
-  width: 400px;
-  margin-bottom: 2rem;
+.combo_box {
+  display: flex;
+  opacity: 0;
+  animation: loading2 ease-in forwards 0.55s;
+  margin-bottom: 1.5rem;
+}
+.combo_box > .selectBox {
+  margin: 0 2rem 0 2rem;
+  width: 250px;
 }
 
 .form_group.submit {
