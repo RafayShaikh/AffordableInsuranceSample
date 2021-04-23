@@ -11,6 +11,9 @@ function Header({ header }) {
     history.push(url);
   };
 
+  const contact = (e) => {
+    history.push('/contacts');
+  };
   return (
     <>
       {header === 'header' ? (
@@ -26,7 +29,7 @@ function Header({ header }) {
               <Navigation />
             </div>
           </div>
-          <div className='header_right'>
+          <div onClick={contact} className='header_right'>
             <MicNoneIcon />
             <p>Talk to us</p>
             <div className='header_contact'>
@@ -44,7 +47,7 @@ function Header({ header }) {
               <Navigation />
             </div>
           </div>
-          <div className='header_right2'>
+          <div onClick={contact} className='header_right2'>
             <MicNoneIcon />
             <div className='header_contact2'>361-854-0207</div>
           </div>

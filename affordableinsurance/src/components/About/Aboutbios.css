@@ -1,40 +1,76 @@
-.about_bioHead > h2 {
-  margin-top: 10%;
-  margin-bottom: 10%;
-  animation: loading 1s linear;
-  border-top: 1px solid var(--secondary);
-}
-.about_bioHead {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.about_bioContainer {
+  display: grid;
+  grid-template-columns: auto 30%;
+  grid-template-rows: auto auto;
   flex-direction: column;
-  color: var(--primary);
-  font-size: larger;
-}
-
-.about_bioHead > img {
-  transform: translateY(-100%);
-  animation: loading2 0.8s forwards linear;
-  animation-delay: 0.2s;
-  object-fit: contain;
-  height: 300px;
+  margin: 5%;
+  padding: 5%;
 }
 
 .about_bioDescription {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  margin-top: 3%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 5%;
-}
-
-.about_bioContainer {
+  grid-area: 2 / 1 / last-line;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-top: 20px;
   justify-content: center;
+  padding-right: 10%;
+}
+
+.about_bioPic {
+  grid-area: 1 / 2 / last-line;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  justify-content: center;
+}
+.about_bioName {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  animation: nameAnimation 2s linear;
+  color: var(--primary);
+}
+
+@keyframes nameAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.about_bioName > h2 {
+  font-size: 40px;
+}
+
+.about_bioDescription > article {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .about_bioContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    padding: 5%;
+    width: 50%;
+  }
+  .about_bioHead {
+    grid-area: 1 / 1;
+    display: flex;
+    width: auto;
+  }
+  .about_bioName {
+    grid-area: 1 / 2;
+    display: flex;
+    width: auto;
+  }
+  .about_bioDescription {
+    grid-area: 1 / 3;
+    display: flex;
+  }
+  .about_bioDescription > article {
+    font-size: 1.25rem;
+  }
 }

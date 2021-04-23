@@ -15,7 +15,6 @@ import Services from './components/Services/Services';
 import Service_Info from './components/Services/Service_Info';
 import Service_Form from './components/Services/Service_Form';
 import { useSelector } from 'react-redux';
-import locationPic from './components/About/employeepics/locationPic.JPG';
 
 function App() {
   const [header, setHeader] = useState('header');
@@ -52,7 +51,6 @@ function App() {
             <Route path='/contacts' exact component={Contacts} />
             <Route path='/' exact component={Home} />
           </Switch>
-          <img className='app_image' src={locationPic} alt='' />
         </div>
         <Footer />
       </div>
