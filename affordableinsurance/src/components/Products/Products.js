@@ -36,7 +36,6 @@ function Products() {
   return (
     <div className='products_container'>
       <div className='products_logos'>
-        <img src={products[0]} />
         {products.map((product) => (
           <div className='products_logo'>
             <img src={product} />
