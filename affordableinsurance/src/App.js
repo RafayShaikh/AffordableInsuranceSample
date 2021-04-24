@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'babel-polyfill';
-import { app, selectAppData } from './features/appSlice';
+import { selectAppData } from './features/appSlice';
 import './App.css';
 import Header from './components/HeaderFooter/Header';
 import Footer from './components/HeaderFooter/Footer';
@@ -12,9 +12,10 @@ import Aboutbios from './components/About/Aboutbios';
 import Contacts from './components/Contacts/Contacts';
 import Products from './components/Products/Products';
 import Services from './components/Services/Services';
-import Service_Info from './components/Services/Service_Info';
-import Service_Form from './components/Services/Service_Form';
+import Service_Info from './components/Services/ServiceInfo';
+import Service_Form from './components/Services/ServiceForm';
 import { useSelector } from 'react-redux';
+import NotFound from './NotFound';
 
 function App() {
   const [header, setHeader] = useState('header');
@@ -50,6 +51,7 @@ function App() {
             <Route path='/services/:id/form' exact component={Service_Form} />
             <Route path='/contacts' exact component={Contacts} />
             <Route path='/' exact component={Home} />
+            <Route path='/:id' exact component={NotFound} />
           </Switch>
         </div>
         <Footer />

@@ -2,16 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './About.css';
 import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { add, appSlice, remove, selectAppData } from '../../features/appSlice';
+import { add, selectAppData } from '../../features/appSlice';
 import Typist from 'react-typist';
-import pic from './employeepics/Dan.png';
-import pic1 from './employeepics/1.JPG';
-import pic2 from './employeepics/2.JPG';
-import pic3 from './employeepics/3.JPG';
+
 import { db, storage } from '../../firebase';
 
 function About({ match }) {
-  const [about, setAbout] = useState({]);
+  const [about, setAbout] = useState([]);
   const [fileUrl, setFileUrl] = useState(null);
   const dataSlice = useSelector(selectAppData);
   const history = useHistory();

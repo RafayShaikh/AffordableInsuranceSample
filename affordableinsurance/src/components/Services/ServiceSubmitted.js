@@ -1,5 +1,5 @@
 import React from 'react';
-import './Service_Submitted.css';
+import './ServiceSubmitted.css';
 
 function Service_Submitted() {
   return (

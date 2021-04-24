@@ -7,12 +7,13 @@
   transition: transform 0.4s;
   padding: 10px;
 }
-.homeheadtext_container > p {
+.homeheadtext_container > div {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.homeheadtext_container > p > h2 {
+.homeheadtext_container > h2 {
+  padding: 15px;
 }
