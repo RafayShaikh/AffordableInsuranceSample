@@ -1,0 +1,7 @@
+.products_container {
+  display: flex;
+}
+.products_logo > img {
+  height: 500px;
+  zoom: 0.2;
+}

@@ -11,60 +11,39 @@ import pic9 from './Carrier_logos/TapcoLogo.svg';
 import pic10 from './Carrier_logos/TWIALogo.svg';
 import pic11 from './Carrier_logos/WellingtonLogo.svg';
 import pic12 from './Carrier_logos/WestonLogo.svg';
-
-
-
-
-
-
-
+import './Products.css';
 
 function Products() {
-
-    const [products, setProducts] = useState([
-pic, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11, pic12, 
+  const [products, setProducts] = useState([
+    pic,
+    pic2,
+    pic3,
+    pic4,
+    pic5,
+    pic6,
+    pic7,
+    pic8,
+    pic9,
+    pic10,
+    pic11,
+    pic12,
   ]);
-
-
-
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
 
-
-
-return(
-
-  <div className="product_container">
-
-    <div className="product_logos">
-
-      {products.map((val, id) => (
-          <div className='products_logos'>
-
-            <svg component={val}></svg>
-
+  return (
+    <div className='products_container'>
+      <div className='products_logos'>
+        {products.map((product) => (
+          <div className='products_logo'>
+            <img src={product} />
           </div>
         ))}
-      
-
+      </div>
     </div>
-    
-
-  </div>
-
-
-);
-
-
-
-
+  );
 }
-
-
-
 
 export default Products;
