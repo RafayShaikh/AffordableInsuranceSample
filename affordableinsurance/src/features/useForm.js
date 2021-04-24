@@ -17,6 +17,9 @@ const useForm = (callback, validate) => {
     city: '',
     state: '',
     zipcode: '',
+    message: '',
+    service: '',
+    budget: '',
   });
   const [errors, setErrors] = useState({});
   const [steps, setSteps] = useState(1);
@@ -30,37 +33,30 @@ const useForm = (callback, validate) => {
       [name]: value,
     });
   };
-  const handleNext = (e) => {
+  const handleNext = () => {
+    setErrors(validate(values));
     setCounter(true);
-    let check =
-      Object.keys(errors).length - Object.keys(validate(values)).length;
+    let check = Object.keys(validate(values)).length;
+    /*
     console.log(Object.keys(errors).length);
     console.log(Object.keys(validate(values)).length);
+    */
 
-    if (steps == 1 && check == 2) {
+    if (steps == 1 && check == 9) {
       setSteps(steps + 1);
-      setErrors({});
     }
-    if (steps == 2 && check == 1) {
+    if (steps == 2 && check == 8) {
       setSteps(steps + 1);
-      setErrors({});
     }
-    if (steps == 3 && check == 2) {
+    if (steps == 3 && check == 6) {
       setSteps(steps + 1);
-      setErrors({});
     }
     if (steps == 4 && check == 2) {
       setSteps(steps + 1);
       setErrors({});
     }
   };
-  const handleContact = (e) => {
-    setCounter(true);
-    let check =
-      Object.keys(errors).length - Object.keys(validate(values)).length;
-    console.log(Object.keys(errors).length);
-    console.log(Object.keys(validate(values)).length);
-  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));
@@ -68,15 +64,16 @@ const useForm = (callback, validate) => {
   };
 
   useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
+    if (Object.keys(errors).length === 2 && isSubmitting) {
       callback();
     }
   }, [errors]);
+  /*
   useEffect(() => {
     setCounter(false);
     setErrors(validate(values));
   }, [steps]);
-
+  */
   return {
     counter,
     steps,

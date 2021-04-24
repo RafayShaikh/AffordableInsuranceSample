@@ -36,7 +36,7 @@
   background: whitesmoke;
   box-shadow: 0 0 5px 1px;
   opacity: 0;
-  animation: loading2 0.5s ease-in forwards 0.5s;
+  animation: loading2 ease-in forwards 0.3s;
 }
 .contacts_companyInfo {
   background-color: var(--primary);
@@ -196,8 +196,8 @@ textarea:focus {
   margin-bottom: 1.5rem;
 }
 .combo_box > .selectBox {
-  margin: 0 2rem 0 2rem;
-  width: 250px;
+  margin: 0 4rem 0 4rem;
+  width: 12rem;
 }
 
 .form_group.submit {

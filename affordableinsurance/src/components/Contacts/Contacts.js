@@ -12,25 +12,13 @@ import { Phone, Mail, Room, Facebook, LocalParking } from '@material-ui/icons';
 import { withRouter } from 'react-router';
 
 function Contacts() {
-  const {
-    counter,
-    handleContact,
-    handleChange,
-    handleSubmit,
-    values,
-    errors,
-  } = useForm(submitForm, validate);
+  const { handleChange, values } = useForm(submitForm, validate);
   const [submitted, setSubmitted] = useState(false);
   function submitForm() {
     setSubmitted(true);
   }
-  /*
-  const [Fname, setFname] = useState('');
-  const [Lname, setLname] = useState('');
-  const [Email, setEmail] = useState('');
-  const [PhoneNum, setPhoneNum] = useState('');
-  */
-  const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState({});
+  const [checker, setChecker] = useState(false);
   const [QuickQuest, setQuickQuest] = useState(true);
   const [GetQuote, setGetQuote] = useState(false);
 
@@ -65,16 +53,25 @@ function Contacts() {
   ];
 
   const reRef = useRef();
-  const sendMessage = () => {
+  const sendForm = (e) => {
+    setErrors(validate(values));
+    setChecker(true);
+
+    if (Object.keys(validate(values)).length == 6 && QuickQuest) {
+      e.preventDefault();
+      alert('Success!!');
+    } else if (Object.keys(validate(values)).length == 5 && GetQuote) {
+      e.preventDefault();
+      alert('Success!!');
+    }
     /*  Need to be like this
     if ( '' == this.state.value ) {
       alert( 'Validation failed! Input cannot be empty.' );
       this.recaptcha.reset();
     } else {
       this.recaptcha.execute();
-    }
+    }Recaptcha.execute();
     */
-    Recaptcha.execute();
   };
 
   useEffect(() => {
@@ -92,6 +89,7 @@ function Contacts() {
           around! To learn more about any of our programs or about the several
           companies that we represent, please give us a call today! Our friendly
           and helpful staff is ready to assist you with your inquiries.
+          {Object.keys(validate(values)).length}
         </p>
       </div>
       <div className='contacts_container'>
@@ -134,7 +132,7 @@ function Contacts() {
           </div>
         </div>
         <div className='contacts_FormContainer'>
-          <form>
+          <form onSubmit={sendForm}>
             <div className='col2'>
               <div className='form_group'>
                 <label>First Name</label>
@@ -144,6 +142,7 @@ function Contacts() {
                   value={values.firstName}
                   onChange={handleChange}
                 />
+                {checker && errors.firstName ? <p>{errors.firstName}</p> : null}
               </div>
               <div className='form_group'>
                 <label>Last Name</label>
@@ -153,6 +152,7 @@ function Contacts() {
                   value={values.lastName}
                   onChange={handleChange}
                 />
+                {checker && errors.lastName ? <p>{errors.lastName}</p> : null}
               </div>
             </div>
             <div className='col2'>
@@ -164,6 +164,7 @@ function Contacts() {
                   value={values.email}
                   onChange={handleChange}
                 />
+                {checker && errors.email ? <p>{errors.email}</p> : null}
               </div>
               <div className='form_group'>
                 <label>Phone #</label>
@@ -173,6 +174,7 @@ function Contacts() {
                   value={values.phone}
                   onChange={handleChange}
                 />
+                {checker && errors.phone ? <p>{errors.phone}</p> : null}
               </div>
             </div>
             <div className='col2'>
@@ -211,7 +213,14 @@ function Contacts() {
                     <div className='combo_box'>
                       <FormControl className='selectBox'>
                         <InputLabel>Service</InputLabel>
-                        <Select>
+                        <Select
+                          name='service'
+                          value={values.service}
+                          onChange={handleChange}
+                        >
+                          <MenuItem value=''>
+                            <em>None</em>
+                          </MenuItem>
                           {services.map((item) => (
                             <MenuItem key={item} value={item}>
                               {item}
@@ -219,13 +228,23 @@ function Contacts() {
                           ))}
                         </Select>
                       </FormControl>
+                      {checker && errors.service ? (
+                        <p>{errors.service}</p>
+                      ) : null}
                     </div>
                   ) : null}
                   {GetQuote ? (
                     <div className='combo_box'>
                       <FormControl className='selectBox'>
-                        <InputLabel>Budget</InputLabel>
-                        <Select>
+                        <InputLabel>Budget (optional)</InputLabel>
+                        <Select
+                          value={values.budget}
+                          name='budget'
+                          onChange={handleChange}
+                        >
+                          <MenuItem value=''>
+                            <em>None</em>
+                          </MenuItem>
                           {budgets.map((item) => (
                             <MenuItem key={item} value={item}>
                               {item}
@@ -243,16 +262,16 @@ function Contacts() {
                 <label>Message</label>
                 <textarea
                   placeholder='Write you message here'
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  name='message'
+                  value={values.message}
+                  onChange={handleChange}
                 ></textarea>
+                {checker && errors.message ? <p>{errors.message}</p> : null}
               </div>
             </div>
             <div className='col2'>
               <div className='form_group solo submit'>
-                <button className='sendButton' onClick={sendMessage}>
-                  Send Message
-                </button>
+                <button className='sendButton'>Send Message</button>
               </div>
             </div>
           </form>
