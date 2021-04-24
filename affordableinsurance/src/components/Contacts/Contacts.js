@@ -87,14 +87,12 @@ function Contacts() {
           <div className='online_media'>
             <a
               href='https://www.facebook.com/Affordableinsoftexas'
-              target='_blank'
               className='icon_shape'
             >
               <Facebook />
             </a>
             <a
               href='https://www.progressive.com/agent/local-agent/texas/corpus-christi/affordable-insurance-of-texas-78415/'
-              target='_blank'
               className='icon_shape'
             >
               <LocalParking />
@@ -173,6 +171,7 @@ function Contacts() {
                 <div className='combo_container'>
                   {GetQuote ? (
                     <Autocomplete
+                      disableAnimation
                       className='combo-box'
                       options={services}
                       getOptionLabel={(option) => option.service}
@@ -224,4 +223,4 @@ function Contacts() {
   );
 }
 
-export default withRouter(Contacts);
+export default Contacts;

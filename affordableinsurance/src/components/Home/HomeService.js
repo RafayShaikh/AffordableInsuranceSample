@@ -1,13 +1,12 @@
 import React from 'react';
-import './Home_Service.css';
+import './HomeService.css';
 import HouseIcon from '@material-ui/icons/House';
-import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import LocalConvenienceStoreIcon from '@material-ui/icons/LocalConvenienceStore';
 import BusinessIcon from '@material-ui/icons/Business';
 import CommuteIcon from '@material-ui/icons/Commute';
 import { useHistory } from 'react-router';
 
-function Home_Service() {
+function HomeService() {
   const history = useHistory();
   const clickHandler = (url) => {
     history.push(url);
@@ -53,4 +52,4 @@ function Home_Service() {
   );
 }
 
-export default Home_Service;
+export default HomeService;

@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import './Service_Form.css';
+import './ServiceForm.css';
 import { useSelector } from 'react-redux';
 import { selectAppData } from '../../features/appSlice';
 import { useHistory } from 'react-router';
-import Service_Submitted from './Service_Submitted';
+import Service_Submitted from './ServiceSubmitted';
 import validate from '../../features/validateInfo';
 import useForm from '../../features/useForm';
+import emailjs from 'emailjs-com';
 
 function Service_Form() {
   const dataSlice = useSelector(selectAppData);
@@ -22,9 +23,31 @@ function Service_Form() {
   } = useForm(submitForm, validate);
   const [submitted, setSubmitted] = useState(false);
   function submitForm() {
+    var data = {
+      name: values?.firstName + ' ' + values?.lastName,
+      selection: values?.selection,
+      dob: values?.dob,
+      email: values?.email,
+      phone: values?.phone,
+      address: `${values?.street}, ${values?.city}, ${values?.state}, ${values?.zipcode}`,
+    };
+    emailjs
+      .send(
+        'service_xhdy2ag',
+        'template_t0z3w5k',
+        data,
+        'user_XTFXToGlN5MdxYo0hYMDd'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
     setSubmitted(true);
   }
-
   useEffect(() => {
     if (dataSlice?.insuranceName === null) {
       history.push('/services');
@@ -115,9 +138,11 @@ function Service_Form() {
               <label>Phone Number</label>
               <input
                 className='form-input'
-                type='number'
+                type='tel'
                 name='phone'
                 placeholder='Enter your Phone Number'
+                pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+                required
                 value={values.phone}
                 onChange={handleChange}
               />
