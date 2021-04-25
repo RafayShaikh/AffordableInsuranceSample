@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import pic from './Carrier_logos/AlinscoLogo.svg';
 import pic2 from './Carrier_logos/AmwinsLogos.svg';
 import pic3 from './Carrier_logos/ASILogos.svg';
@@ -28,14 +29,42 @@ function Products() {
     pic11,
     pic12,
   ]);
+  const history = useHistory();
+  const [count, setCount] = useState(0);
+  const [loop, setLoop] = useState();
+  const clickHandler = (e) => {
+    e.preventDefault();
+    history.push('/contacts');
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    setLoop(
+      setInterval(() => {
+        if (products.length === count + 1) {
+          setCount(0);
+        } else {
+          setCount(count + 1);
+        }
+      }, 1000)
+    );
+    return function cleanup() {
+      clearInterval(loop);
+    };
+  }, [count]);
+
   return (
     <div className='products_container'>
-      <div className='products_logos'>
+      <h1>Our Trusted Carriers</h1>
+      {products[count] != null ? (
+        <img src={products[count]} />
+      ) : (
+        <img src={pic} />
+      )}
+      <div onClick={clickHandler} className='products_logos'>
         {products.map((product) => (
           <div className='products_logo'>
             <img src={product} />
