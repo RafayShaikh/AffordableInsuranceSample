@@ -1,44 +1,71 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Contacts.css';
 import validate from '../../features/validateInfo';
 import useForm from '../../features/useForm';
-
+import { withRouter } from 'react-router';
 import { Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
-
 import Recaptcha from 'react-google-recaptcha';
-
+import emailjs from 'emailjs-com';
 import { Phone, Mail, Room, Facebook, LocalParking } from '@material-ui/icons';
 
-import { withRouter } from 'react-router';
-
 function Contacts() {
-  const { handleChange, values } = useForm(submitForm, validate);
+  const {
+    counter,
+    QuickQuest,
+    GetQuote,
+    handleChange,
+    handleRadio,
+    handleContactSubmit,
+    values,
+    errors,
+  } = useForm(submitForm, validate);
+
   const [submitted, setSubmitted] = useState(false);
-  function submitForm() {
+  function submitForm(captchaValue) {
+    var data = {
+      name: values?.firstName + ' ' + values?.lastName,
+      selection: values?.service + ' ' + values?.budget,
+      email: values?.email,
+      phone: values?.phone,
+      message: values?.message,
+      'g-recaptcha-response': captchaValue,
+    };
+    emailjs
+      .send(
+        'service_xhdy2ag',
+        'template_xodz2i9',
+        data,
+        'user_XTFXToGlN5MdxYo0hYMDd'
+      )
+      .then(
+        (result) => {},
+        (error) => {}
+      );
+    setButton(false);
     setSubmitted(true);
   }
-  const [errors, setErrors] = useState({});
-  const [checker, setChecker] = useState(false);
-  const [QuickQuest, setQuickQuest] = useState(true);
-  const [GetQuote, setGetQuote] = useState(false);
+  const [button, setButton] = useState(false);
 
   const services = [
     'Auto/Trucks',
-    'Bonds',
-    'Windstorm',
     'Builders Risk',
-    'Motorcycle',
-    'Recreational Vehicles',
-    'Mobile Homes',
+    'Bonds',
     'Boats',
-    'Flood',
-    'Workers’ Comp',
+    'Comercial Auto/Cargo',
     'Commercial Property',
     'Commercial Liability',
-    'Renter’s policies',
+    'Flood',
+    'Home Owners',
     'Liquor Liability',
+    'Motorcycle',
+    'Mobile Homes',
     'Mexico Insurance',
+    'Recreational Vehicles',
+    'Renter’s policies',
+    'Special Events',
     'SR22s',
+    'Windstorm',
+    'Workers’ Comp',
   ];
   const budgets = [
     '$500',
@@ -51,29 +78,6 @@ function Contacts() {
     '$100,000',
     '$1,000,000',
   ];
-
-  const reRef = useRef();
-  const sendForm = (e) => {
-    e.preventDefault();
-    setErrors(validate(values));
-    setChecker(true);
-
-    if (Object.keys(validate(values)).length == 6 && QuickQuest) {
-      //alert('Success!!');
-      Recaptcha.execute();
-    } else if (Object.keys(validate(values)).length == 5 && GetQuote) {
-      //alert('Success!!');
-      Recaptcha.execute();
-    }
-    /*  Need to be like this
-    if ( '' == this.state.value ) {
-      alert( 'Validation failed! Input cannot be empty.' );
-      this.recaptcha.reset();
-    } else {
-      this.recaptcha.execute();
-    }
-    */
-  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -133,7 +137,7 @@ function Contacts() {
           </div>
         </div>
         <div className='contacts_FormContainer'>
-          <form onSubmit={sendForm}>
+          <form onSubmit={handleContactSubmit}>
             <div className='col2'>
               <div className='form_group'>
                 <label>First Name</label>
@@ -143,7 +147,7 @@ function Contacts() {
                   value={values.firstName}
                   onChange={handleChange}
                 />
-                {checker && errors.firstName ? (
+                {counter && errors.firstName ? (
                   <p className='valError'>{errors.firstName}</p>
                 ) : null}
               </div>
@@ -155,7 +159,7 @@ function Contacts() {
                   value={values.lastName}
                   onChange={handleChange}
                 />
-                {checker && errors.lastName ? (
+                {counter && errors.lastName ? (
                   <p className='valError'>{errors.lastName}</p>
                 ) : null}
               </div>
@@ -169,7 +173,7 @@ function Contacts() {
                   value={values.email}
                   onChange={handleChange}
                 />
-                {checker && errors.email ? (
+                {counter && errors.email ? (
                   <p className='valError'>{errors.email}</p>
                 ) : null}
               </div>
@@ -181,7 +185,7 @@ function Contacts() {
                   value={values.phone}
                   onChange={handleChange}
                 />
-                {checker && errors.phone ? (
+                {counter && errors.phone ? (
                   <p className='valError'>{errors.phone}</p>
                 ) : null}
               </div>
@@ -197,7 +201,7 @@ function Contacts() {
                       id='radioQuestion'
                       value={QuickQuest}
                       checked={QuickQuest}
-                      onChange={(e) => setQuickQuest(true) & setGetQuote(false)}
+                      onChange={handleRadio}
                     />
                     <label for='radioQuestion'>Quick Question</label>
                   </div>
@@ -207,8 +211,7 @@ function Contacts() {
                       name='type'
                       id='radioQuote'
                       value={GetQuote}
-                      checked={GetQuote}
-                      onChange={(e) => setGetQuote(true) & setQuickQuest(false)}
+                      onChange={handleRadio}
                     />
                     <label for='radioQuote'>Get A Quote</label>
                   </div>
@@ -237,7 +240,7 @@ function Contacts() {
                           ))}
                         </Select>
                       </FormControl>
-                      {checker && errors.service ? (
+                      {counter && errors.service ? (
                         <p className='valError'>{errors.service}</p>
                       ) : null}
                     </div>
@@ -275,26 +278,30 @@ function Contacts() {
                   value={values.message}
                   onChange={handleChange}
                 ></textarea>
-                {checker && errors.message ? (
+                {counter && errors.message ? (
                   <p className='valError'>{errors.message}</p>
                 ) : null}
               </div>
             </div>
             <div className='col2'>
               <div className='form_group solo submit'>
-                <button className='sendButton' type='submit'>
-                  Send Message
-                </button>
+                <Recaptcha
+                  render='explicit'
+                  sitekey={'6Lfo_7oaAAAAAD4jHMCcQgmWo1IUDw2RwOh6t8qn'}
+                  onChange={() => {
+                    setButton(true);
+                  }}
+                />
+                {button ? (
+                  <button className='sendButton' type='submit'>
+                    Send Message
+                  </button>
+                ) : null}
               </div>
             </div>
           </form>
         </div>
       </div>
-      <Recaptcha
-        ref={reRef}
-        sitekey='6LfT9LoaAAAAAHNiZy1wELmn4gYTuNbPTU1AWnGg'
-        onResolved={() => console.log('Human detected.')}
-      />
     </div>
   );
 }

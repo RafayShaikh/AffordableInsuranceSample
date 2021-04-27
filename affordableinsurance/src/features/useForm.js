@@ -24,6 +24,8 @@ const useForm = (callback, validate) => {
   const [errors, setErrors] = useState({});
   const [steps, setSteps] = useState(1);
   const [counter, setCounter] = useState(false);
+  const [QuickQuest, setQuickQuest] = useState(true);
+  const [GetQuote, setGetQuote] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -56,6 +58,30 @@ const useForm = (callback, validate) => {
     setIsSubmitting(true);
   };
 
+  const handleContactSubmit = (e) => {
+    e.preventDefault();
+    setErrors(validate(values));
+    setCounter(true);
+
+    if (Object.keys(validate(values)).length == 6 && QuickQuest) {
+      alert('Success!!');
+      //callback();
+    } else if (Object.keys(validate(values)).length == 5 && GetQuote) {
+      alert('Success!!');
+      //callback();
+    }
+  };
+
+  const handleRadio = () => {
+    if (QuickQuest) {
+      setGetQuote(true);
+      setQuickQuest(false);
+    } else if (GetQuote) {
+      setQuickQuest(true);
+      setGetQuote(false);
+    }
+  };
+
   useEffect(() => {
     if (Object.keys(errors).length === 2 && isSubmitting) {
       callback();
@@ -70,8 +96,12 @@ const useForm = (callback, validate) => {
   return {
     counter,
     steps,
+    QuickQuest,
+    GetQuote,
     handleChange,
+    handleRadio,
     handleSubmit,
+    handleContactSubmit,
     handleNext,
     values,
     errors,
