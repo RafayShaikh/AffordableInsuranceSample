@@ -7,7 +7,7 @@ import './HomeBanner.css';
 function HomeBanner() {
   const [text, setText] = useState([]);
   const [edit, setEdit] = useState(false);
-  const [newText, setNewText] = useState(null);
+  const [newText, setNewText] = useState('');
   const dataSlice = useSelector(selectAppData);
 
   const fetchText = async () => {
@@ -41,7 +41,7 @@ function HomeBanner() {
   };
   const saveText = (e) => {
     e.preventDefault();
-    if (newText != null) {
+    if (newText != null && newText != '') {
       updateText();
     }
     setNewText(null);

@@ -39,6 +39,9 @@ function Carriers() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    return function cleanup() {
+      clearInterval(loop);
+    };
   }, []);
 
   useEffect(() => {
@@ -65,8 +68,8 @@ function Carriers() {
         <img src={pic} />
       )}
       <div onClick={clickHandler} className='products_logos'>
-        {products.map((product) => (
-          <div className='products_logo'>
+        {products.map((product, id) => (
+          <div key={id} className='products_logo'>
             <img src={product} />
           </div>
         ))}

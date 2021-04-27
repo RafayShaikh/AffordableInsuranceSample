@@ -66,6 +66,7 @@
   padding: 3% 0 3% 0;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
 }
 .icon_text > .MuiSvgIcon-root {
   flex: 0 0 35px;
@@ -82,18 +83,19 @@
 .online_media {
   display: flex;
   padding-top: 15%;
-  width: 115px;
-  justify-content: space-between;
+  justify-content: left;
 }
 .online_media > .icon_shape {
-  flex: 0 1 45px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 45px;
-  border-radius: 50%;
+  border-radius: 500px;
   transition: 0.5s all ease-in-out;
   background: #b1161b;
+  padding: 5px;
+  overflow-y: hidden;
+
+  margin-left: 10px;
 }
 .online_media > .icon_shape:hover {
   background: var(--secondary);
@@ -105,7 +107,6 @@
 }
 .contacts_FormContainer {
   display: flex;
-  flex: 0 1 65%;
 }
 form {
   padding: 40px;
@@ -113,6 +114,7 @@ form {
 }
 .col2 {
   display: flex;
+  overflow-y: hidden;
 }
 .form_group {
   display: flex;
@@ -196,14 +198,18 @@ form {
   margin-bottom: 1.5rem;
 }
 .combo_box > .selectBox {
-  margin: 0 4rem 0 4rem;
+  margin: 0 3rem 0 3rem;
   width: 12rem;
+  overflow-y: hidden;
+  min-width: 200px;
 }
 .valError {
   color: var(--primary);
   margin: 2%;
 }
-
+.recaptcha > div > div {
+  overflow-y: hidden;
+}
 .form_group.submit {
   align-items: flex-end;
 }
@@ -231,10 +237,55 @@ form {
   .contacts_container {
     flex-direction: column;
   }
-  .online_media {
-    width: 22%;
-  }
+
   .contacts_FormContainer {
     height: 40%;
+  }
+  .contacts_companyInfo > *,
+  .icon_text > *,
+  .contacts_body > *,
+  .online_media > * {
+    font-size: medium !important;
+  }
+  .icon_shape > .MuiSvgIcon-root {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .contacts_FormContainer {
+    height: 40%;
+  }
+  .col2 {
+    flex-wrap: wrap;
+  }
+
+  .contacts_companyInfo > *,
+  .icon_text > *,
+  .contacts_body > *,
+  .online_media > * {
+    font-size: small !important;
+  }
+  .icon_shape > .MuiSvgIcon-root {
+    font-size: 1rem;
+  }
+  .combo_box > .selectBox {
+    margin: 0 1.2rem 0 1.2rem;
+  }
+}
+.MuiFormControl-root > * {
+  overflow-y: hidden;
+}
+@media screen and (max-width: 400px) {
+  .icon_shape {
+    height: 10px;
+  }
+  .icon_shape > .MuiSvgIcon-root {
+    font-size: 0.8rem;
+  }
+  .recaptcha {
+    transform: scale(0.77);
+    width: 100%;
+    border-right: 1px solid lightgray;
   }
 }

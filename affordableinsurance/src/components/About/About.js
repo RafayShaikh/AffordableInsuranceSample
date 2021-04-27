@@ -75,7 +75,8 @@ function About({ match }) {
       );
     };
     fetchUsers();
-  }, [about]);
+    return true;
+  }, []);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -104,6 +105,7 @@ function About({ match }) {
       <div className='about_bios'>
         {about?.map((doc, id) => (
           <div
+            key={id}
             className='about_individuals'
             onClick={() =>
               clickHandler(
