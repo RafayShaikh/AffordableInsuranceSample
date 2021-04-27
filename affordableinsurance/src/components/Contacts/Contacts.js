@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Contacts.css';
 import validate from '../../features/validateInfo';
+import Service_Submitted from '../Services/ServiceSubmitted';
 import useForm from '../../features/useForm';
-import { withRouter } from 'react-router';
 import { Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
 import Recaptcha from 'react-google-recaptcha';
 import emailjs from 'emailjs-com';
@@ -41,7 +41,8 @@ function Contacts() {
         (result) => {},
         (error) => {}
       );
-    setButton(false);
+    console.log(data);
+    //setButton(false);
     setSubmitted(true);
   }
   const [button, setButton] = useState(false);
@@ -180,7 +181,8 @@ function Contacts() {
               <div className='form_group'>
                 <label>Phone #</label>
                 <input
-                  type='number'
+                  type='tel'
+                  pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
                   name='phone'
                   value={values.phone}
                   onChange={handleChange}
@@ -289,7 +291,8 @@ function Contacts() {
                   render='explicit'
                   sitekey={'6Lfo_7oaAAAAAD4jHMCcQgmWo1IUDw2RwOh6t8qn'}
                   onChange={() => {
-                    setButton(true);
+                    if (button) setButton(false);
+                    else setButton(true);
                   }}
                 />
                 {button ? (
@@ -302,6 +305,7 @@ function Contacts() {
           </form>
         </div>
       </div>
+      {submitted && <Service_Submitted />}
     </div>
   );
 }

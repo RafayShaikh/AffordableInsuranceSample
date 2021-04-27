@@ -64,11 +64,11 @@ const useForm = (callback, validate) => {
     setCounter(true);
 
     if (Object.keys(validate(values)).length == 6 && QuickQuest) {
-      alert('Success!!');
-      //callback();
+      //alert('Success!!');
+      callback();
     } else if (Object.keys(validate(values)).length == 5 && GetQuote) {
-      alert('Success!!');
-      //callback();
+      //alert('Success!!');
+      callback();
     }
   };
 
