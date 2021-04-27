@@ -47,10 +47,13 @@ function Service_Form() {
       )
       .then(
         (result) => {},
-        (error) => {}
+        (error) => {
+          alert('Something Went Wrong. Please Try Again In A Few Minutes.');
+        }
       );
     setButton(false);
     setSubmitted(true);
+    data = {};
   }
   useEffect(() => {
     if (dataSlice?.insuranceName === null) {
@@ -61,13 +64,7 @@ function Service_Form() {
     <div className='service_formContainer'>
       <div className='service_formArea'>
         <h2>Please fillout the form below</h2>
-        {values.selection && (
-          <h3>
-            Your Selection:{' '}
-            {values.selection + ' ' + Object.keys(validate(values)).length}{' '}
-            Insurance
-          </h3>
-        )}
+        {values.selection && <h3>Your Selection: Insurance</h3>}
         {values?.lastName && (
           <h3>Your Name: {values?.firstName + ' ' + values?.lastName} </h3>
         )}
@@ -209,6 +206,7 @@ function Service_Form() {
               />
               {counter && errors.zipcode ? <p>{errors.zipcode}</p> : null}
               <ReCAPTCHA
+                className='recaptcha'
                 render='explicit'
                 sitekey={'6Lfo_7oaAAAAAD4jHMCcQgmWo1IUDw2RwOh6t8qn'}
                 onChange={() => {

@@ -80,7 +80,7 @@ function Services({ match }) {
     [RvHookup, 'Mobile Home', ''],
     [
       BeachAccess,
-      'Mexico Insurance',
+      'Mexico Coverage',
       'This policy is an extension of your current policy in the U.S. you can have full coverage in Mexico but you must have full coverage on your domestic policy.',
     ],
     [
@@ -152,6 +152,7 @@ function Services({ match }) {
       <div className='services_offered'>
         {services.map((val, id) => (
           <div
+            key={id}
             className='services_offeredBox'
             onClick={() =>
               clickHandler(`${match.url}/${id}`, val[0], val[1], val[2])

@@ -6,9 +6,13 @@ function Service_Submitted() {
   const [count, setCount] = useState(5);
   const history = useHistory();
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
     setTimeout(() => {
       history.replace('/');
     }, 5000);
+    return true;
   }, []);
   useEffect(() => {
     setInterval(() => {

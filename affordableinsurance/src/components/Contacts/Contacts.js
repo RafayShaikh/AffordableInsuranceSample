@@ -95,7 +95,6 @@ function Contacts() {
           around! To learn more about any of our programs or about the several
           companies that we represent, please give us a call today! Our friendly
           and helpful staff is ready to assist you with your inquiries.
-          {Object.keys(validate(values)).length}
         </p>
       </div>
       <div className='contacts_container'>
@@ -288,6 +287,7 @@ function Contacts() {
             <div className='col2'>
               <div className='form_group solo submit'>
                 <Recaptcha
+                  className='recaptcha'
                   render='explicit'
                   sitekey={'6Lfo_7oaAAAAAD4jHMCcQgmWo1IUDw2RwOh6t8qn'}
                   onChange={() => {
