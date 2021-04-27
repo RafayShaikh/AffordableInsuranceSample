@@ -51,14 +51,11 @@ const useForm = (callback, validate) => {
     if (steps == 3 && check == 6) {
       setSteps(steps + 1);
     }
-    if (steps == 4 && check == 2) {
-      setSteps(steps + 1);
-      setErrors({});
-    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setCounter(true);
     setErrors(validate(values));
     setIsSubmitting(true);
   };
@@ -68,12 +65,12 @@ const useForm = (callback, validate) => {
       callback();
     }
   }, [errors]);
-  /*
+
   useEffect(() => {
     setCounter(false);
-    setErrors(validate(values));
+    //setErrors(validate(values));
   }, [steps]);
-  */
+
   return {
     counter,
     steps,

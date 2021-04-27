@@ -145,7 +145,7 @@ function Service_Form() {
                 value={values.street}
                 onChange={handleChange}
               />
-              {counter && errors.steet ? <p>{errors.street}</p> : null}
+              {counter && errors.street ? <p>{errors.street}</p> : null}
 
               <label>City</label>
               <input

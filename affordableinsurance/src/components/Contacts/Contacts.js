@@ -5,7 +5,7 @@ import useForm from '../../features/useForm';
 
 import { Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
 
-import Recaptcha from 'react-google-invisible-recaptcha';
+import Recaptcha from 'react-google-recaptcha';
 
 import { Phone, Mail, Room, Facebook, LocalParking } from '@material-ui/icons';
 
@@ -54,15 +54,16 @@ function Contacts() {
 
   const reRef = useRef();
   const sendForm = (e) => {
+    e.preventDefault();
     setErrors(validate(values));
     setChecker(true);
 
     if (Object.keys(validate(values)).length == 6 && QuickQuest) {
-      e.preventDefault();
-      alert('Success!!');
+      //alert('Success!!');
+      Recaptcha.execute();
     } else if (Object.keys(validate(values)).length == 5 && GetQuote) {
-      e.preventDefault();
-      alert('Success!!');
+      //alert('Success!!');
+      Recaptcha.execute();
     }
     /*  Need to be like this
     if ( '' == this.state.value ) {
@@ -70,7 +71,7 @@ function Contacts() {
       this.recaptcha.reset();
     } else {
       this.recaptcha.execute();
-    }Recaptcha.execute();
+    }
     */
   };
 
@@ -142,7 +143,9 @@ function Contacts() {
                   value={values.firstName}
                   onChange={handleChange}
                 />
-                {checker && errors.firstName ? <p>{errors.firstName}</p> : null}
+                {checker && errors.firstName ? (
+                  <p className='valError'>{errors.firstName}</p>
+                ) : null}
               </div>
               <div className='form_group'>
                 <label>Last Name</label>
@@ -152,7 +155,9 @@ function Contacts() {
                   value={values.lastName}
                   onChange={handleChange}
                 />
-                {checker && errors.lastName ? <p>{errors.lastName}</p> : null}
+                {checker && errors.lastName ? (
+                  <p className='valError'>{errors.lastName}</p>
+                ) : null}
               </div>
             </div>
             <div className='col2'>
@@ -164,7 +169,9 @@ function Contacts() {
                   value={values.email}
                   onChange={handleChange}
                 />
-                {checker && errors.email ? <p>{errors.email}</p> : null}
+                {checker && errors.email ? (
+                  <p className='valError'>{errors.email}</p>
+                ) : null}
               </div>
               <div className='form_group'>
                 <label>Phone #</label>
@@ -174,7 +181,9 @@ function Contacts() {
                   value={values.phone}
                   onChange={handleChange}
                 />
-                {checker && errors.phone ? <p>{errors.phone}</p> : null}
+                {checker && errors.phone ? (
+                  <p className='valError'>{errors.phone}</p>
+                ) : null}
               </div>
             </div>
             <div className='col2'>
@@ -229,7 +238,7 @@ function Contacts() {
                         </Select>
                       </FormControl>
                       {checker && errors.service ? (
-                        <p>{errors.service}</p>
+                        <p className='valError'>{errors.service}</p>
                       ) : null}
                     </div>
                   ) : null}
@@ -266,12 +275,16 @@ function Contacts() {
                   value={values.message}
                   onChange={handleChange}
                 ></textarea>
-                {checker && errors.message ? <p>{errors.message}</p> : null}
+                {checker && errors.message ? (
+                  <p className='valError'>{errors.message}</p>
+                ) : null}
               </div>
             </div>
             <div className='col2'>
               <div className='form_group solo submit'>
-                <button className='sendButton'>Send Message</button>
+                <button className='sendButton' type='submit'>
+                  Send Message
+                </button>
               </div>
             </div>
           </form>
@@ -279,7 +292,7 @@ function Contacts() {
       </div>
       <Recaptcha
         ref={reRef}
-        sitekey='6Ld_bbQaAAAAAMl24YHDn77HYpoMkCT2JJHh8Nd6'
+        sitekey='6LfT9LoaAAAAAHNiZy1wELmn4gYTuNbPTU1AWnGg'
         onResolved={() => console.log('Human detected.')}
       />
     </div>

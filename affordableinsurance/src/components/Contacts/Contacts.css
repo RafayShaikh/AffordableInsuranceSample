@@ -199,6 +199,10 @@ textarea:focus {
   margin: 0 4rem 0 4rem;
   width: 12rem;
 }
+.valError {
+  color: var(--primary);
+  margin: 2%;
+}
 
 .form_group.submit {
   align-items: flex-end;
