@@ -12,9 +12,9 @@ import pic9 from './Carrier_logos/TapcoLogo.svg';
 import pic10 from './Carrier_logos/TWIALogo.svg';
 import pic11 from './Carrier_logos/WellingtonLogo.svg';
 import pic12 from './Carrier_logos/WestonLogo.svg';
-import './Products.css';
+import './Carriers.css';
 
-function Products() {
+function Carriers() {
   const [products, setProducts] = useState([
     pic,
     pic2,
@@ -75,4 +75,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Carriers;

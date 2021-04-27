@@ -13,7 +13,7 @@ function Navigation() {
       <div className='navigation_list'>
         <h4 onClick={() => clickHandler('/')}>Home</h4>
         <h4 onClick={() => clickHandler('/about')}>About</h4>
-        <h4 onClick={() => clickHandler('/products')}>Carriers</h4>
+        <h4 onClick={() => clickHandler('/carriers')}>Carriers</h4>
         <h4 onClick={() => clickHandler('/services')}>Services</h4>
         <h4 onClick={() => clickHandler('/contacts')}>Contact</h4>
       </div>
