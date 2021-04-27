@@ -87,7 +87,7 @@ function Contacts() {
   return (
     <div className='contacts_body'>
       <div className='contacts_description'>
-        <h1>Contacts Start</h1>
+        <h1>Contacts Us</h1>
         <p>
           Thank you for visiting our website. For all your insurance needs for
           vehicle, home and office, come to Affordable Insurance of Texas. We
@@ -95,7 +95,6 @@ function Contacts() {
           around! To learn more about any of our programs or about the several
           companies that we represent, please give us a call today! Our friendly
           and helpful staff is ready to assist you with your inquiries.
-          {Object.keys(validate(values)).length}
         </p>
       </div>
       <div className='contacts_container'>
