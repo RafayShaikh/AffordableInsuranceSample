@@ -132,7 +132,7 @@ form {
   margin-bottom: 0.8rem;
 }
 .form_group > input[type='text'],
-.form_group > input[type='number'],
+.form_group > input[type='tel'],
 .form_group > input[type='email'] {
   border: none;
   background: transparent;
@@ -161,7 +161,7 @@ form {
   margin-bottom: 1.5rem;
 }
 .form_group > input[type='text']:focus,
-.form_group > input[type='number']:focus,
+.form_group > input[type='tel']:focus,
 .form_group > input[type='email']:focus,
 .form_group > textarea:focus {
   border: none;
