@@ -62,7 +62,11 @@ function Service_Form() {
       <div className='service_formArea'>
         <h2>Please fillout the form below</h2>
         {values.selection && (
-          <h3>Your Selection: {values.selection} Insurance</h3>
+          <h3>
+            Your Selection:{' '}
+            {values.selection + ' ' + Object.keys(validate(values)).length}{' '}
+            Insurance
+          </h3>
         )}
         {values?.lastName && (
           <h3>Your Name: {values?.firstName + ' ' + values?.lastName} </h3>
@@ -89,7 +93,7 @@ function Service_Form() {
                 value={values.firstName}
                 onChange={handleChange}
               />
-              {counter && errors.firstName && <p>{errors.firstName}</p>}
+              {counter && errors.firstName ? <p>{errors.firstName}</p> : null}
 
               <label>Last Name</label>
               <input
@@ -100,7 +104,7 @@ function Service_Form() {
                 value={values.lastName}
                 onChange={handleChange}
               />
-              {counter && errors.lastName && <p>{errors.lastName}</p>}
+              {counter && errors.lastName ? <p>{errors.lastName}</p> : null}
               <div className='service_formNext' onClick={handleNext}>
                 Next
               </div>
@@ -118,7 +122,7 @@ function Service_Form() {
                 value={values.dob}
                 onChange={handleChange}
               />
-              {counter && errors.dob && <p>{errors.dob}</p>}
+              {counter && errors.dob ? <p>{errors.dob}</p> : null}
 
               <div className='service_formNext' onClick={handleNext}>
                 Next
@@ -137,7 +141,7 @@ function Service_Form() {
                 value={values.email}
                 onChange={handleChange}
               />
-              {counter && errors.email && <p>{errors.email}</p>}
+              {counter && errors.email ? <p>{errors.email}</p> : null}
 
               <label>Phone Number</label>
               <input
@@ -150,7 +154,7 @@ function Service_Form() {
                 value={values.phone}
                 onChange={handleChange}
               />
-              {counter && errors.phone && <p>{errors.phone}</p>}
+              {counter && errors.phone ? <p>{errors.phone}</p> : null}
 
               <div className='service_formNext' onClick={handleNext}>
                 Next
@@ -170,7 +174,7 @@ function Service_Form() {
                 value={values.street}
                 onChange={handleChange}
               />
-              {counter && errors.street && <p>{errors.street}</p>}
+              {counter && errors.street ? <p>{errors.street}</p> : null}
 
               <label>City</label>
               <input
@@ -181,7 +185,7 @@ function Service_Form() {
                 value={values.city}
                 onChange={handleChange}
               />
-              {counter && errors.city && <p>{errors.city}</p>}
+              {counter && errors.city ? <p>{errors.city}</p> : null}
 
               <label>State</label>
               <input
@@ -192,7 +196,7 @@ function Service_Form() {
                 value={values.state}
                 onChange={handleChange}
               />
-              {counter && errors.state && <p>{errors.state}</p>}
+              {counter && errors.state ? <p>{errors.state}</p> : null}
 
               <label>Zipcode</label>
               <input
@@ -203,7 +207,7 @@ function Service_Form() {
                 value={values.zipcode}
                 onChange={handleChange}
               />
-              {counter && errors.zipcode && <p>{errors.zipcode}</p>}
+              {counter && errors.zipcode ? <p>{errors.zipcode}</p> : null}
               <ReCAPTCHA
                 render='explicit'
                 sitekey={'6Lfo_7oaAAAAAD4jHMCcQgmWo1IUDw2RwOh6t8qn'}

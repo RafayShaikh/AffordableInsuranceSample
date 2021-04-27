@@ -1,50 +1,82 @@
 import React, { useState, useEffect } from 'react';
 import './Contacts.css';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-
+import validate from '../../features/validateInfo';
+import useForm from '../../features/useForm';
+import { withRouter } from 'react-router';
+import { Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
+import Recaptcha from 'react-google-recaptcha';
+import emailjs from 'emailjs-com';
 import { Phone, Mail, Room, Facebook, LocalParking } from '@material-ui/icons';
 
-import { withRouter } from 'react-router';
-
 function Contacts() {
-  const [Fname, setFname] = useState('');
-  const [Lname, setLname] = useState('');
-  const [Email, setEmail] = useState('');
-  const [PhoneNum, setPhoneNum] = useState('');
-  const [message, setMessage] = useState('');
-  const [QuickQuest, setQuickQuest] = useState(true);
-  const [GetQuote, setGetQuote] = useState(false);
+  const {
+    counter,
+    QuickQuest,
+    GetQuote,
+    handleChange,
+    handleRadio,
+    handleContactSubmit,
+    values,
+    errors,
+  } = useForm(submitForm, validate);
+
+  const [submitted, setSubmitted] = useState(false);
+  function submitForm(captchaValue) {
+    var data = {
+      name: values?.firstName + ' ' + values?.lastName,
+      selection: values?.service + ' ' + values?.budget,
+      email: values?.email,
+      phone: values?.phone,
+      message: values?.message,
+      'g-recaptcha-response': captchaValue,
+    };
+    emailjs
+      .send(
+        'service_xhdy2ag',
+        'template_xodz2i9',
+        data,
+        'user_XTFXToGlN5MdxYo0hYMDd'
+      )
+      .then(
+        (result) => {},
+        (error) => {}
+      );
+    setButton(false);
+    setSubmitted(true);
+  }
+  const [button, setButton] = useState(false);
 
   const services = [
-    { service: 'Auto/Trucks' },
-    { service: 'Bonds' },
-    { service: 'Windstorm' },
-    { service: 'Builders Risk' },
-    { service: 'Motorcycle' },
-    { service: 'Recreational Vehicles' },
-    { service: 'Mobile Homes' },
-    { service: 'Boats' },
-    { service: 'Flood' },
-    { service: 'Workers’ Comp' },
-    { service: 'Commercial Property' },
-    { service: 'Commercial Liability' },
-    { service: 'Renter’s policies' },
-    { service: 'Liquor Liability' },
-    { service: 'Mexico Insurance' },
-    { service: 'SR22s' },
+    'Auto/Trucks',
+    'Builders Risk',
+    'Bonds',
+    'Boats',
+    'Comercial Auto/Cargo',
+    'Commercial Property',
+    'Commercial Liability',
+    'Flood',
+    'Home Owners',
+    'Liquor Liability',
+    'Motorcycle',
+    'Mobile Homes',
+    'Mexico Insurance',
+    'Recreational Vehicles',
+    'Renter’s policies',
+    'Special Events',
+    'SR22s',
+    'Windstorm',
+    'Workers’ Comp',
   ];
-
   const budgets = [
-    { budget: '$500' },
-    { budget: '$1,000' },
-    { budget: '$2,500' },
-    { budget: '$5,000' },
-    { budget: '$7,500' },
-    { budget: '$10,000' },
-    { budget: '$50,000' },
-    { budget: '$100,000' },
-    { budget: '$1,000,000' },
+    '$500',
+    '$1,000',
+    '$2,500',
+    '$5,000',
+    '$7,500',
+    '$10,000',
+    '$50,000',
+    '$100,000',
+    '$1,000,000',
   ];
 
   useEffect(() => {
@@ -62,6 +94,7 @@ function Contacts() {
           around! To learn more about any of our programs or about the several
           companies that we represent, please give us a call today! Our friendly
           and helpful staff is ready to assist you with your inquiries.
+          {Object.keys(validate(values)).length}
         </p>
       </div>
       <div className='contacts_container'>
@@ -87,12 +120,16 @@ function Contacts() {
           <div className='online_media'>
             <a
               href='https://www.facebook.com/Affordableinsoftexas'
+              target='_blank'
+              rel='noreferrer'
               className='icon_shape'
             >
               <Facebook />
             </a>
             <a
               href='https://www.progressive.com/agent/local-agent/texas/corpus-christi/affordable-insurance-of-texas-78415/'
+              target='_blank'
+              rel='noreferrer'
               className='icon_shape'
             >
               <LocalParking />
@@ -100,23 +137,31 @@ function Contacts() {
           </div>
         </div>
         <div className='contacts_FormContainer'>
-          <form>
+          <form onSubmit={handleContactSubmit}>
             <div className='col2'>
               <div className='form_group'>
                 <label>First Name</label>
                 <input
                   type='text'
-                  value={Fname}
-                  onChange={(e) => setFname(e.target.value)}
+                  name='firstName'
+                  value={values.firstName}
+                  onChange={handleChange}
                 />
+                {counter && errors.firstName ? (
+                  <p className='valError'>{errors.firstName}</p>
+                ) : null}
               </div>
               <div className='form_group'>
                 <label>Last Name</label>
                 <input
                   type='text'
-                  value={Lname}
-                  onChange={(e) => setLname(e.target.value)}
+                  name='lastName'
+                  value={values.lastName}
+                  onChange={handleChange}
                 />
+                {counter && errors.lastName ? (
+                  <p className='valError'>{errors.lastName}</p>
+                ) : null}
               </div>
             </div>
             <div className='col2'>
@@ -124,17 +169,25 @@ function Contacts() {
                 <label>Email</label>
                 <input
                   type='email'
-                  value={Email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  name='email'
+                  value={values.email}
+                  onChange={handleChange}
                 />
+                {counter && errors.email ? (
+                  <p className='valError'>{errors.email}</p>
+                ) : null}
               </div>
               <div className='form_group'>
                 <label>Phone #</label>
                 <input
-                  type='phone'
-                  value={PhoneNum}
-                  onChange={(e) => setPhoneNum(e.target.value)}
+                  type='number'
+                  name='phone'
+                  value={values.phone}
+                  onChange={handleChange}
                 />
+                {counter && errors.phone ? (
+                  <p className='valError'>{errors.phone}</p>
+                ) : null}
               </div>
             </div>
             <div className='col2'>
@@ -148,7 +201,7 @@ function Contacts() {
                       id='radioQuestion'
                       value={QuickQuest}
                       checked={QuickQuest}
-                      onChange={(e) => setQuickQuest(true) & setGetQuote(false)}
+                      onChange={handleRadio}
                     />
                     <label for='radioQuestion'>Quick Question</label>
                   </div>
@@ -158,8 +211,7 @@ function Contacts() {
                       name='type'
                       id='radioQuote'
                       value={GetQuote}
-                      checked={GetQuote}
-                      onChange={(e) => setGetQuote(true) & setQuickQuest(false)}
+                      onChange={handleRadio}
                     />
                     <label for='radioQuote'>Get A Quote</label>
                   </div>
@@ -170,33 +222,49 @@ function Contacts() {
               <div className='form_group'>
                 <div className='combo_container'>
                   {GetQuote ? (
-                    <Autocomplete
-                      disableAnimation
-                      className='combo-box'
-                      options={services}
-                      getOptionLabel={(option) => option.service}
-                      renderInput={(params) => (
-                        <TextField
-                          {...params}
-                          label='Services'
-                          variant='outlined'
-                        />
-                      )}
-                    />
+                    <div className='combo_box'>
+                      <FormControl className='selectBox'>
+                        <InputLabel>Service</InputLabel>
+                        <Select
+                          name='service'
+                          value={values.service}
+                          onChange={handleChange}
+                        >
+                          <MenuItem value=''>
+                            <em>None</em>
+                          </MenuItem>
+                          {services.map((item) => (
+                            <MenuItem key={item} value={item}>
+                              {item}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                      {counter && errors.service ? (
+                        <p className='valError'>{errors.service}</p>
+                      ) : null}
+                    </div>
                   ) : null}
                   {GetQuote ? (
-                    <Autocomplete
-                      className='combo-box'
-                      options={budgets}
-                      getOptionLabel={(option) => option.budget}
-                      renderInput={(params) => (
-                        <TextField
-                          {...params}
-                          label='Budget'
-                          variant='outlined'
-                        />
-                      )}
-                    />
+                    <div className='combo_box'>
+                      <FormControl className='selectBox'>
+                        <InputLabel>Budget (optional)</InputLabel>
+                        <Select
+                          value={values.budget}
+                          name='budget'
+                          onChange={handleChange}
+                        >
+                          <MenuItem value=''>
+                            <em>None</em>
+                          </MenuItem>
+                          {budgets.map((item) => (
+                            <MenuItem key={item} value={item}>
+                              {item}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </div>
                   ) : null}
                 </div>
               </div>
@@ -206,14 +274,29 @@ function Contacts() {
                 <label>Message</label>
                 <textarea
                   placeholder='Write you message here'
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  name='message'
+                  value={values.message}
+                  onChange={handleChange}
                 ></textarea>
+                {counter && errors.message ? (
+                  <p className='valError'>{errors.message}</p>
+                ) : null}
               </div>
             </div>
             <div className='col2'>
               <div className='form_group solo submit'>
-                <button className='sendButton'>Send Message</button>
+                <Recaptcha
+                  render='explicit'
+                  sitekey={'6Lfo_7oaAAAAAD4jHMCcQgmWo1IUDw2RwOh6t8qn'}
+                  onChange={() => {
+                    setButton(true);
+                  }}
+                />
+                {button ? (
+                  <button className='sendButton' type='submit'>
+                    Send Message
+                  </button>
+                ) : null}
               </div>
             </div>
           </form>

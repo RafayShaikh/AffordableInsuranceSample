@@ -36,6 +36,12 @@ export default function validateInfo(values) {
   if (!values.zipcode) {
     errors.zipcode = 'Zipcode required';
   }
+  if (!values.message) {
+    errors.message = 'Please fill out your message';
+  }
+  if (!values.service) {
+    errors.service = 'Service is required';
+  }
 
   return errors;
 }
