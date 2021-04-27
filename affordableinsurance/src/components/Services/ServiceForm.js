@@ -8,6 +8,8 @@ import Service_Submitted from './ServiceSubmitted';
 import validate from '../../features/validateInfo';
 import useForm from '../../features/useForm';
 import emailjs from 'emailjs-com';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { StepButton } from 'material-ui';
 
 function Service_Form() {
   const dataSlice = useSelector(selectAppData);
@@ -22,7 +24,9 @@ function Service_Form() {
     errors,
   } = useForm(submitForm, validate);
   const [submitted, setSubmitted] = useState(false);
-  function submitForm() {
+  const [button, setButton] = useState(false);
+
+  function submitForm(captchaValue) {
     var data = {
       name: values?.firstName + ' ' + values?.lastName,
       selection: values?.selection,
@@ -30,22 +34,22 @@ function Service_Form() {
       email: values?.email,
       phone: values?.phone,
       address: `${values?.street}, ${values?.city}, ${values?.state}, ${values?.zipcode}`,
+      'g-recaptcha-response': captchaValue,
     };
     emailjs
       .send(
         'service_xhdy2ag',
         'template_t0z3w5k',
+        //template_xodz2i9 contacts template
+        //Concat services with budget
         data,
         'user_XTFXToGlN5MdxYo0hYMDd'
       )
       .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
+        (result) => {},
+        (error) => {}
       );
+    setButton(false);
     setSubmitted(true);
   }
   useEffect(() => {
@@ -200,10 +204,18 @@ function Service_Form() {
                 onChange={handleChange}
               />
               {counter && errors.zipcode && <p>{errors.zipcode}</p>}
-
-              <button className='service_formNext' type='submit'>
-                Submit
-              </button>
+              <ReCAPTCHA
+                render='explicit'
+                sitekey={'6Lfo_7oaAAAAAD4jHMCcQgmWo1IUDw2RwOh6t8qn'}
+                onChange={() => {
+                  setButton(true);
+                }}
+              />
+              {button == true ? (
+                <button className='service_formNext' type='submit'>
+                  Submit
+                </button>
+              ) : null}
             </div>
           )}
         </form>
