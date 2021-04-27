@@ -132,8 +132,8 @@ form {
   margin-bottom: 0.8rem;
 }
 .form_group > input[type='text'],
-input[type='number'],
-input[type='email'] {
+.form_group > input[type='phone'],
+.form_group > input[type='email'] {
   border: none;
   background: transparent;
   border-bottom: 2px solid var(--primary);
@@ -161,8 +161,8 @@ input[type='email'] {
   margin-bottom: 1.5rem;
 }
 .form_group > input[type='text']:focus,
-input[type='number']:focus,
-input[type='email']:focus,
+.form_group > input[type='phone']:focus,
+.form_group > input[type='email']:focus,
 textarea:focus {
   border: none;
   outline: none;

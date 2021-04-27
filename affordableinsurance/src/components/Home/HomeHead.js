@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Typist from 'react-typist';
-import './Home_Head.css';
+import './HomeHead.css';
 
-function Home_Head() {
+function HomeHead() {
   const [text, setText] = useState([
     'Experts of Insurance',
     'Experienced',
@@ -36,17 +36,17 @@ function Home_Head() {
         <h2>Affordable Insurance of Texas can save you money!</h2>
       </Typist>
 
-      <p>
+      <div>
         <Typist avgTypingDelay={20} cursor={{ show: false }}>
           Affordable Insurance of Texas is the right place for you because we
           are
         </Typist>
-        <h2 style={{ color: color[count % 2] }}>
-          {text[count] != null ? text[count] : 'Local'}
-        </h2>
-      </p>
+      </div>
+      <h2 style={{ color: color[count % 2] }}>
+        {text[count] != null ? text[count] : 'Local'}
+      </h2>
     </div>
   );
 }
 
-export default Home_Head;
+export default HomeHead;

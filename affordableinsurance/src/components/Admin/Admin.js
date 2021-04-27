@@ -76,6 +76,7 @@ function Admin() {
         ) : (
           <h1 onClick={signOut}>Sign Out</h1>
         )}
+        {error ? <h3>Something Went Wrong Please Try Again</h3> : null}
       </div>
     </div>
   );

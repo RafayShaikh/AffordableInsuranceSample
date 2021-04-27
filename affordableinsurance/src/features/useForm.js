@@ -37,10 +37,6 @@ const useForm = (callback, validate) => {
     setErrors(validate(values));
     setCounter(true);
     let check = Object.keys(validate(values)).length;
-    /*
-    console.log(Object.keys(errors).length);
-    console.log(Object.keys(validate(values)).length);
-    */
 
     if (steps == 1 && check == 9) {
       setSteps(steps + 1);

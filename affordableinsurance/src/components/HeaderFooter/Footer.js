@@ -19,13 +19,13 @@ function Footer() {
         <p>5133 Kostoryz Road Suite B,</p>
         <p>Corpus Christi, TX 78415</p>
       </div>
-      <div className='footer_grid'>
+      <div onClick={() => history.push('/contacts')} className='footer_grid'>
         <h5>Let's Have A Conversation</h5>
         <p>Phone: 361-854-0207</p>
         <p>Fax: 361-854-7073</p>
         <p>Email: affordableinsoftx@yahoo.com</p>
       </div>
-      <div className='footer_grid'>
+      <div onClick={() => history.push('/contacts')} className='footer_grid'>
         <h5>Bussiness Hours</h5>
         <p>Monday-Thursday, 8:30 a.m.-5:30 p.m.</p>
         <p>Friday, 8:30 a.m.-5 p.m.</p>

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectAppData } from '../../features/appSlice';
 import { auth, db } from '../../firebase';
-import './Home_Banner.css';
+import './HomeBanner.css';
 
-function Home_Banner() {
+function HomeBanner() {
   const [text, setText] = useState([]);
   const [edit, setEdit] = useState(false);
   const [newText, setNewText] = useState(null);
@@ -75,4 +75,4 @@ function Home_Banner() {
   );
 }
 
-export default Home_Banner;
+export default HomeBanner;

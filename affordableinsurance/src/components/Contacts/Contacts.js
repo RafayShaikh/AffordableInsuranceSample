@@ -299,4 +299,4 @@ function Contacts() {
   );
 }
 
-export default withRouter(Contacts);
+export default Contacts;
