@@ -38,6 +38,9 @@ function Footer() {
           alt=''
         />
         <h4 onClick={() => history.push('/admin')}>Admin Login</h4>
+        <p>
+          Copyright, Affordable Insurance of Texas, {new Date().getFullYear()}
+        </p>
       </div>
     </div>
   );

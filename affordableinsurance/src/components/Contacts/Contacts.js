@@ -287,6 +287,7 @@ function Contacts() {
             <div className='col2'>
               <div className='form_group solo submit'>
                 <Recaptcha
+                  className='recaptcha'
                   render='explicit'
                   sitekey={'6Lfo_7oaAAAAAD4jHMCcQgmWo1IUDw2RwOh6t8qn'}
                   onChange={() => {
