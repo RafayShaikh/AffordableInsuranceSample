@@ -22,7 +22,9 @@
   padding-right: 5px;
   overflow-y: hidden;
 }
-
+.navigation_list:active {
+  color: var(--secondary);
+}
 .navigation_list > h4 {
   align-items: center;
   flex-wrap: nowrap;

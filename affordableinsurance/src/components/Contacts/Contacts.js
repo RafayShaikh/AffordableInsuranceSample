@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Contacts.css';
 import validate from '../../features/validateInfo';
 import Service_Submitted from '../Services/ServiceSubmitted';
@@ -9,6 +9,7 @@ import emailjs from 'emailjs-com';
 import { Phone, Mail, Room, Facebook, LocalParking } from '@material-ui/icons';
 
 function Contacts() {
+  const captcha = useRef();
   const {
     counter,
     QuickQuest,
@@ -21,14 +22,14 @@ function Contacts() {
   } = useForm(submitForm, validate);
 
   const [submitted, setSubmitted] = useState(false);
-  function submitForm(captchaValue) {
+  function submitForm() {
     var data = {
       name: values?.firstName + ' ' + values?.lastName,
       selection: values?.service + ' ' + values?.budget,
       email: values?.email,
       phone: values?.phone,
       message: values?.message,
-      'g-recaptcha-response': captchaValue,
+      'g-recaptcha-response': captcha.current.getValue(),
     };
     emailjs
       .send(
@@ -39,10 +40,13 @@ function Contacts() {
       )
       .then(
         (result) => {},
-        (error) => {}
+        (error) => {
+          alert('Something went wrong. Please try refreshing the page!');
+          return 0;
+        }
       );
-    console.log(data);
-    //setButton(false);
+
+    setButton(false);
     setSubmitted(true);
   }
   const [button, setButton] = useState(false);
@@ -288,6 +292,7 @@ function Contacts() {
               <div className='form_group solo submit'>
                 <Recaptcha
                   className='recaptcha'
+                  ref={captcha}
                   render='explicit'
                   sitekey={'6Lfo_7oaAAAAAD4jHMCcQgmWo1IUDw2RwOh6t8qn'}
                   onChange={() => {
