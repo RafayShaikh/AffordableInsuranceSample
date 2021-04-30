@@ -60,8 +60,7 @@
   display: flex;
   justify-content: center;
 }
-.header_contact {
-}
+
 .header_container2 {
   background-color: black;
   position: fixed;
@@ -116,8 +115,7 @@
   display: flex;
   align-items: center;
 }
-.header_contact2 {
-}
+
 @media screen and (max-height: 399px) {
   .header_container2 {
     height: 15%;
@@ -134,7 +132,7 @@
     font-size: xx-small;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 725px) {
   .header_container {
     height: 15vh;
   }
