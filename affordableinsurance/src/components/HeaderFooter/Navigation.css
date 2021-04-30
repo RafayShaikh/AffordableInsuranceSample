@@ -29,6 +29,7 @@
   align-items: center;
   flex-wrap: nowrap;
   cursor: pointer;
+  font-size: large;
   transition: transform 0.3s;
 }
 .navigation_list > h4:hover {

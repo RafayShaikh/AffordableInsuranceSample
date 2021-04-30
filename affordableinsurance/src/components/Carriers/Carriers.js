@@ -52,7 +52,7 @@ function Carriers() {
         } else {
           setCount(count + 1);
         }
-      }, 1000)
+      }, 3000)
     );
     return function cleanup() {
       clearInterval(loop);

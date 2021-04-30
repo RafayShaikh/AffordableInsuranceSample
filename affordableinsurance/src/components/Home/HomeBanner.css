@@ -1,5 +1,6 @@
 .home_bannerContainer {
   display: flex;
+  height: 70%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -18,7 +19,7 @@
   border-radius: 100px;
   animation: flashing 1.5s infinite linear;
   animation-delay: 5.5s;
-  font-size: larger;
+  font-size: x-large;
 }
 
 .home_bannerEdit,

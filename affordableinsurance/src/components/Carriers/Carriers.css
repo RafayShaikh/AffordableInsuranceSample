@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2.5rem;
 }
 .products_container > h1 {
   color: var(--primary);
@@ -27,9 +28,7 @@
   padding-bottom: 14px;
 }
 .products_container > img {
-  width: 60%;
-  margin-left: 10%;
-  margin-right: 10%;
+  width: 35%;
   animation: loading2 1s linear;
 }
 .products_logo:hover {
