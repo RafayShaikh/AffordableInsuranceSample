@@ -44,16 +44,36 @@ function About({ match }) {
         picture: fileUrl,
         description: desc,
       })
-      .then(alert('Successfuly Added The Employee'));
+      .then(() => {
+        history.replace('/about');
+        e.target.name.value = '';
+        e.target.desc.value = '';
+        e.target.file.value = '';
+        alert('Successfully Added The New Employee Data');
+      });
   };
   const deleteItem = async (name) => {
+    var fileName = null;
+    await db
+      .collection('employee')
+      .doc(name)
+      .get()
+      .then((doc) => {
+        fileName = doc.data();
+        const storageRef = storage.refFromURL(fileName.picture);
+        storageRef
+          .delete()
+          .then()
+          .catch((error) => {});
+      });
     await db
       .collection('employee')
       .doc(name)
       .delete()
-      .then(alert('Deleted The Employee Data'));
-
-    history.replace('/about');
+      .then(() => {
+        history.push('/about');
+        alert('Deleted The Employee Data');
+      });
   };
 
   const clickHandler = (url, name, pic, text) => {
@@ -120,7 +140,12 @@ function About({ match }) {
             <h2>{doc.name}</h2>
             {dataSlice?.email && (
               <div className='about_admin'>
-                <button onClick={(e) => deleteItem(doc.name)}>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    deleteItem(doc.name);
+                  }}
+                >
                   Delete This Entry
                 </button>
               </div>
@@ -130,7 +155,7 @@ function About({ match }) {
         {dataSlice?.email && (
           <form className='about_form' onSubmit={onSubmit}>
             <h2>Add Employee</h2>
-            <input type='file' onChange={onFileChange} />
+            <input type='file' name='file' onChange={onFileChange} />
             <input type='text' name='name' placeholder='NAME' />
             <input type='textarea' name='desc' placeholder='DESCRIPTION' />
 
