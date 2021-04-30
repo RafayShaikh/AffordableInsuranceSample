@@ -12,9 +12,9 @@ import pic9 from './Carrier_logos/TapcoLogo.svg';
 import pic10 from './Carrier_logos/TWIALogo.svg';
 import pic11 from './Carrier_logos/WellingtonLogo.svg';
 import pic12 from './Carrier_logos/WestonLogo.svg';
-import './Products.css';
+import './Carriers.css';
 
-function Products() {
+function Carriers() {
   const [products, setProducts] = useState([
     pic,
     pic2,
@@ -39,6 +39,9 @@ function Products() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    return function cleanup() {
+      clearInterval(loop);
+    };
   }, []);
 
   useEffect(() => {
@@ -49,7 +52,7 @@ function Products() {
         } else {
           setCount(count + 1);
         }
-      }, 1000)
+      }, 3000)
     );
     return function cleanup() {
       clearInterval(loop);
@@ -65,8 +68,8 @@ function Products() {
         <img src={pic} />
       )}
       <div onClick={clickHandler} className='products_logos'>
-        {products.map((product) => (
-          <div className='products_logo'>
+        {products.map((product, id) => (
+          <div key={id} className='products_logo'>
             <img src={product} />
           </div>
         ))}
@@ -75,4 +78,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Carriers;

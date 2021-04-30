@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import About from './components/About/About';
 import Aboutbios from './components/About/Aboutbios';
 import Contacts from './components/Contacts/Contacts';
-import Products from './components/Products/Products';
+import Carriers from './components/Carriers/Carriers';
 import Services from './components/Services/Services';
 import Service_Info from './components/Services/ServiceInfo';
 import Service_Form from './components/Services/ServiceForm';
@@ -45,7 +45,7 @@ function App() {
             <Route path='/admin' component={Admin} />
             <Route path='/about' exact component={About} />
             <Route path='/about/:id' exact component={Aboutbios} />
-            <Route path='/products' exact component={Products} />
+            <Route path='/carriers' exact component={Carriers} />
             <Route path='/services' exact component={Services} />
             <Route path='/services/:id' exact component={Service_Info} />
             <Route path='/services/:id/form' exact component={Service_Form} />

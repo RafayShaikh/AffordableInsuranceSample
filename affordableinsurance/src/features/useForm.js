@@ -17,10 +17,15 @@ const useForm = (callback, validate) => {
     city: '',
     state: '',
     zipcode: '',
+    message: '',
+    service: '',
+    budget: '',
   });
   const [errors, setErrors] = useState({});
   const [steps, setSteps] = useState(1);
   const [counter, setCounter] = useState(false);
+  const [QuickQuest, setQuickQuest] = useState(true);
+  const [GetQuote, setGetQuote] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -30,49 +35,73 @@ const useForm = (callback, validate) => {
       [name]: value,
     });
   };
-  const handleNext = (e) => {
+  const handleNext = () => {
+    setErrors(validate(values));
     setCounter(true);
-    let check =
-      Object.keys(errors).length - Object.keys(validate(values)).length;
+    let check = Object.keys(validate(values)).length;
 
-    if (steps == 1 && check == 2) {
+    if (steps == 1 && check == 9) {
       setSteps(steps + 1);
-      setErrors({});
     }
-    if (steps == 2 && check == 1) {
+    if (steps == 2 && check == 8) {
       setSteps(steps + 1);
-      setErrors({});
     }
-    if (steps == 3 && check == 2) {
+    if (steps == 3 && check == 6) {
       setSteps(steps + 1);
-      setErrors({});
-    }
-    if (steps == 4 && check == 2) {
-      setSteps(steps + 1);
-      setErrors({});
     }
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setCounter(true);
     setErrors(validate(values));
     setIsSubmitting(true);
   };
 
+  const handleContactSubmit = (e) => {
+    e.preventDefault();
+    setErrors(validate(values));
+    setCounter(true);
+
+    if (Object.keys(validate(values)).length == 6 && QuickQuest) {
+      //alert('Success!!');
+      callback();
+    } else if (Object.keys(validate(values)).length == 5 && GetQuote) {
+      //alert('Success!!');
+      callback();
+    }
+  };
+
+  const handleRadio = () => {
+    if (QuickQuest) {
+      setGetQuote(true);
+      setQuickQuest(false);
+    } else if (GetQuote) {
+      setQuickQuest(true);
+      setGetQuote(false);
+    }
+  };
+
   useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
+    if (Object.keys(errors).length === 2 && isSubmitting) {
       callback();
     }
   }, [errors]);
+
   useEffect(() => {
     setCounter(false);
-    setErrors(validate(values));
+    //setErrors(validate(values));
   }, [steps]);
 
   return {
     counter,
     steps,
+    QuickQuest,
+    GetQuote,
     handleChange,
+    handleRadio,
     handleSubmit,
+    handleContactSubmit,
     handleNext,
     values,
     errors,

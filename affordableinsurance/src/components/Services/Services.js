@@ -30,7 +30,6 @@ import { useEffect } from 'react';
 
 function Services({ match }) {
   const [services, setServices] = useState([
-    [RvHookup, 'Mobile Home'],
     [
       DriveEta,
       'Auto/Trucks',
@@ -70,7 +69,7 @@ function Services({ match }) {
     [
       HouseIcon,
       'Home Owners',
-      "Is a type of ;property insurance that covers a private residence.  It is an insurance policy that combines various personal insurance protections, which can include losses occurring to one's home it's contents, loss of use (additional living expenses) or loss of other personal possessions of the homeowner, as well as liability insurance for accidents that may happen at the home or at the handsof the homeowner within the policy territory Additionally, homeowner's insurance provides financial protection against disasters. A standard home insurance policy insures the home itself along with the things kept inside.",
+      "Is a type of property insurance that covers a private residence.  It is an insurance policy that combines various personal insurance protections, which can include losses occurring to one's home it's contents, loss of use (additional living expenses) or loss of other personal possessions of the homeowner, as well as liability insurance for accidents that may happen at the home or at the handsof the homeowner within the policy territory Additionally, homeowner's insurance provides financial protection against disasters. A standard home insurance policy insures the home itself along with the things kept inside.",
     ],
     [
       LocalDrink,
@@ -78,9 +77,10 @@ function Services({ match }) {
       'This policy is used as a complement to your general liability commonly used for restaurants and/or bars.',
     ],
     [TwoWheeler, 'Motorcycle', ''],
+    [RvHookup, 'Mobile Home', ''],
     [
       BeachAccess,
-      'Mexico Insurance',
+      'Mexico Coverage',
       'This policy is an extension of your current policy in the U.S. you can have full coverage in Mexico but you must have full coverage on your domestic policy.',
     ],
     [
@@ -152,6 +152,7 @@ function Services({ match }) {
       <div className='services_offered'>
         {services.map((val, id) => (
           <div
+            key={id}
             className='services_offeredBox'
             onClick={() =>
               clickHandler(`${match.url}/${id}`, val[0], val[1], val[2])
