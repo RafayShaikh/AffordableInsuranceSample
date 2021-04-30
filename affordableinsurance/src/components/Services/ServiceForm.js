@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useState } from 'react';
 import './ServiceForm.css';
 import { useSelector } from 'react-redux';
@@ -25,8 +25,9 @@ function Service_Form() {
   } = useForm(submitForm, validate);
   const [submitted, setSubmitted] = useState(false);
   const [button, setButton] = useState(false);
+  const captcha = useRef();
 
-  function submitForm(captchaValue) {
+  function submitForm() {
     var data = {
       name: values?.firstName + ' ' + values?.lastName,
       selection: values?.selection,
@@ -34,14 +35,13 @@ function Service_Form() {
       email: values?.email,
       phone: values?.phone,
       address: `${values?.street}, ${values?.city}, ${values?.state}, ${values?.zipcode}`,
-      'g-recaptcha-response': captchaValue,
+      'g-recaptcha-response': captcha.current.getValue(),
     };
     emailjs
       .send(
         'service_xhdy2ag',
         'template_t0z3w5k',
-        //template_xodz2i9 contacts template
-        //Concat services with budget
+
         data,
         'user_XTFXToGlN5MdxYo0hYMDd'
       )
@@ -49,6 +49,7 @@ function Service_Form() {
         (result) => {},
         (error) => {
           alert('Something Went Wrong. Please Try Again In A Few Minutes.');
+          return;
         }
       );
     setButton(false);
@@ -206,6 +207,7 @@ function Service_Form() {
               />
               {counter && errors.zipcode ? <p>{errors.zipcode}</p> : null}
               <ReCAPTCHA
+                ref={captcha}
                 className='recaptcha'
                 render='explicit'
                 sitekey={'6Lfo_7oaAAAAAD4jHMCcQgmWo1IUDw2RwOh6t8qn'}
