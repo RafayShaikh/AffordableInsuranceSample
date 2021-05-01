@@ -31,10 +31,12 @@ function Admin() {
     await auth
       .signInWithPopup(provider)
       .then((result) => {
-        if (result.user.email != email) signOut(e);
+       if (result.user.email != email) signOut(e);
         const data = {
           email: result.user.email,
         };
+
+     
 
         dispatch(addUser(data));
       })
