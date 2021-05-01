@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 import './Footer.css';
+import pic from './creditcardimg/aiof-creditcards.png';
 
 function Footer() {
   const history = useHistory();
@@ -33,10 +34,14 @@ function Footer() {
       </div>
       <div className='footer_grid'>
         <h5>Accepted Payment Method:</h5>
+
         <img
-          src='http://www.affordableinsoftx.com/wp-content/uploads/2019/07/aiof-creditcards-1.png'
-          alt=''
+          src = {pic}
+          alt='pic'
         />
+
+
+
         <h4 onClick={() => history.push('/admin')}>Admin Login</h4>
         <p>
           Copyright, Affordable Insurance of Texas, {new Date().getFullYear()}
