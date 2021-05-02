@@ -282,7 +282,6 @@ form {
   .recaptcha {
     transform: scale(0.77);
     width: 100%;
-    border-right: 1px solid lightgray;
   }
 }
 

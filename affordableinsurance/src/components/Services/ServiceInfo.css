@@ -19,6 +19,7 @@
   animation: loading2 0.8s linear;
 }
 .service_infoHead > h2 {
+  margin-left: 10px;
   animation: loading 0.8s linear;
 }
 .service_infoDescription {
