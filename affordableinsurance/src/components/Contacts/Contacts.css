@@ -173,6 +173,13 @@ form {
   border-bottom: 2px solid lightskyblue;
   cursor: text;
 }
+.form_group > input[type='text']::placeholder,
+.form_group > input[type='tel']::placeholder,
+.form_group > input[type='email']::placeholder,
+.form_group > textarea::placeholder {
+  color: rgb(155, 155, 155);
+}
+
 .radio_buttons {
   display: flex;
   justify-content: flex-start;

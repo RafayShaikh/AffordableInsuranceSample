@@ -147,6 +147,7 @@ function Contacts() {
                 <label>First Name</label>
                 <input
                   type='text'
+                  placeholder='John'
                   name='firstName'
                   value={values.firstName}
                   onChange={handleChange}
@@ -159,6 +160,7 @@ function Contacts() {
                 <label>Last Name</label>
                 <input
                   type='text'
+                  placeholder='Doe'
                   name='lastName'
                   value={values.lastName}
                   onChange={handleChange}
@@ -173,6 +175,7 @@ function Contacts() {
                 <label>Email</label>
                 <input
                   type='email'
+                  placeholder='Jdoe21@gmail.com'
                   name='email'
                   value={values.email}
                   onChange={handleChange}
@@ -186,6 +189,7 @@ function Contacts() {
                 <input
                   type='tel'
                   pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+                  placeholder='361 - 444 - 4444'
                   name='phone'
                   value={values.phone}
                   onChange={handleChange}
